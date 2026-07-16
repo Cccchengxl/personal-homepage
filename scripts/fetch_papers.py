@@ -627,16 +627,21 @@ def write_markdown(path: Path, feed: dict[str, Any], profile: dict[str, Any]) ->
 
 
 def send_email(feed: dict[str, Any], profile: dict[str, Any]) -> bool:
-    host = os.environ.get("SMTP_HOST")
-    port = int(os.environ.get("SMTP_PORT", "587"))
-    username = os.environ.get("SMTP_USER")
-    password = os.environ.get("SMTP_PASSWORD")
-    mail_to = os.environ.get("MAIL_TO") or profile.get("email")
-    mail_from = os.environ.get("MAIL_FROM") or username or profile.get("email")
-    starttls = os.environ.get("SMTP_STARTTLS", "1") != "0"
+    host = os.environ.get("SMTP_HOST") or ""
+    username = os.environ.get("SMTP_USER") or ""
+    password = os.environ.get("SMTP_PASSWORD") or ""
+    mail_to = os.environ.get("MAIL_TO") or profile.get("email") or ""
+    mail_from = os.environ.get("MAIL_FROM") or username or profile.get("email") or ""
+    starttls = (os.environ.get("SMTP_STARTTLS") or "1") != "0"
 
     if not host or not mail_to or not mail_from:
         print("Email skipped: set SMTP_HOST, MAIL_TO, and MAIL_FROM/SMTP_USER to enable it.", file=sys.stderr)
+        return False
+
+    try:
+        port = int(os.environ.get("SMTP_PORT") or "587")
+    except ValueError:
+        print("Email skipped: SMTP_PORT must be a number.", file=sys.stderr)
         return False
 
     lines = [
