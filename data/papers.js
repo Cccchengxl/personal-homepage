@@ -1,5 +1,5 @@
 window.RESEARCH_PAPER_FEED = {
-  "updatedAt": "2026-07-16T15:11:17.366392+00:00",
+  "updatedAt": "2026-07-16T15:15:37.385672+00:00",
   "daysBack": 14,
   "minPerModule": 5,
   "maxPerModule": 10,
