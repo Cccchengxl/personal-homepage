@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="个人学术主页和每日论文推荐">
+    <title>个人学术主页</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="主导航">
+      <a class="brand" href="#top" id="brandName">个人主页</a>
+      <nav class="nav-links" aria-label="页面导航">
+        <a href="#about">关于</a>
+        <a href="#research">研究</a>
+        <a href="#papers">论文</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="首页">
+        <img class="hero-image" src="assets/hero-research.png" alt="研究工作台、论文和数据图表">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow" id="heroKicker">Academic Portfolio</p>
+          <h1 id="heroName">你的姓名</h1>
+          <p class="hero-summary" id="heroSummary">这里放一段简洁的个人介绍，说明你的学术背景、研究兴趣和长期问题意识。</p>
+          <div class="tag-row" id="heroTags" aria-label="研究关键词"></div>
+          <div class="hero-actions">
+            <a class="button primary" id="heroScholarLink" href="#" target="_blank" rel="noreferrer">Google Scholar</a>
+            <a class="button primary" href="#papers">查看今日论文</a>
+            <a class="button secondary" href="#research">研究方向</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2>关于我</h2>
+        </div>
+        <div class="about-grid">
+          <article class="panel">
+            <h3 id="profileTitle">研究者 / 学生 / 工程师</h3>
+            <p id="aboutText">请在 data/profile.json 中替换这里的简介。</p>
+            <div class="meta-list" id="profileMeta"></div>
+          </article>
+          <article class="panel accent-panel">
+            <h3>近期关注</h3>
+            <ul class="clean-list" id="highlightList"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="research">
+        <div class="section-heading">
+          <p class="eyebrow">Research</p>
+          <h2>研究方向</h2>
+        </div>
+        <div class="research-grid" id="researchGrid"></div>
+      </section>
+
+      <section class="section papers-section" id="papers">
+        <div class="section-heading papers-heading">
+          <div>
+            <p class="eyebrow">Daily Papers</p>
+            <h2>今日论文推荐</h2>
+          </div>
+          <div class="feed-meta" id="feedMeta">等待首次更新</div>
+        </div>
+
+        <div class="paper-controls" aria-label="论文筛选">
+          <label class="search-box">
+            <span>检索</span>
+            <input id="paperSearch" type="search" placeholder="标题、作者、关键词">
+          </label>
+          <div class="source-filter" role="group" aria-label="来源筛选">
+            <button class="filter-button active" type="button" data-source="all">全部</button>
+            <button class="filter-button" type="button" data-source="arXiv">arXiv</button>
+            <button class="filter-button" type="button" data-source="Journal">期刊</button>
+          </div>
+        </div>
+
+        <div class="paper-list" id="paperList"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          还没有论文数据。配置研究关键词后运行脚本，即可生成每日推荐。
+        </div>
+      </section>
+
+      <section class="section" id="publications">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2>代表性成果</h2>
+        </div>
+        <div class="publication-list" id="publicationList"></div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="contact-band">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>联系与合作</h2>
+            <p id="contactText">欢迎围绕相关研究问题交流。</p>
+          </div>
+          <div class="contact-links" id="contactLinks"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span id="footerName">个人学术主页</span>
+      <span>每日论文数据由 arXiv 与 Crossref 元数据生成</span>
+    </footer>
+
+    <script src="data/profile.js"></script>
+    <script src="data/papers.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

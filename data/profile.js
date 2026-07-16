@@ -1,0 +1,171 @@
+window.SITE_PROFILE = {
+  "name": "程旭丽",
+  "kicker": "Academic Portfolio",
+  "title": "材料助理研究员",
+  "affiliation": "",
+  "location": "上海，中国",
+  "email": "chengxuli@shhxinyuan.cn",
+  "summary": "我的研究聚焦机器学习分子动力学模拟、热力学性质预测以及凝聚态物理中的强关联体系和多铁性质。",
+  "about": "我在上海大学获得博士学位，现任助理研究员。我正在关注机器学习势函数和分子动力学模拟在热力学性质、相变、自由能与热输运计算中的可靠性和可迁移性。我也关注凝聚态强关联体系和多铁材料中电子关联、磁电耦合与自旋-晶格耦合对宏观物性的影响。",
+  "contactText": "欢迎围绕研究合作、论文交流、数据集和开源工具建设联系我。",
+  "tags": [
+    "ML Molecular Dynamics",
+    "DeepMD / MACE",
+    "Strong Correlation / Multiferroics"
+  ],
+  "highlights": [
+    "模块一：机器学习分子动力学模拟与热力学性质。",
+    "模块二：凝聚态物理强关联体系和多铁性质。"
+  ],
+  "links": [
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com.hk/citations?user=uWq5IeIAAAAJ&hl=zh-CN"
+    },
+    {
+      "label": "Email",
+      "url": "mailto:chengxuli@shhxinyuan.cn"
+    },
+    {
+      "label": "GitHub",
+      "url": "#"
+    }
+  ],
+  "researchAreas": [
+    {
+      "name": "机器学习分子动力学模拟与热力学性质",
+      "description": "机器学习势函数、分子动力学模拟、DeepMD、MACE、热输运、相变和热力学性质。",
+      "keywords": [
+        "machine learning molecular dynamics",
+        "molecular dynamics machine learning potential",
+        "machine learning interatomic potential",
+        "neural network potential",
+        "deep potential molecular dynamics",
+        "DeepMD",
+        "DeePMD-kit",
+        "MACE potential",
+        "MACE interatomic potential",
+        "ab initio molecular dynamics machine learning",
+        "thermodynamic properties molecular dynamics",
+        "free energy machine learning potential",
+        "thermal conductivity molecular dynamics",
+        "phase transition molecular dynamics"
+      ],
+      "arxivCategories": [
+        "physics.comp-ph",
+        "physics.chem-ph",
+        "cond-mat.mtrl-sci",
+        "cond-mat.stat-mech",
+        "cs.LG"
+      ]
+    },
+    {
+      "name": "凝聚态物理强关联体系和多铁性质",
+      "description": "强关联电子体系、多铁材料、铁电性、铁磁性、磁电耦合和量子多体物理。",
+      "keywords": [
+        "strongly correlated systems",
+        "strongly correlated electrons",
+        "Hubbard model",
+        "Mott insulator",
+        "quantum spin liquid",
+        "unconventional superconductivity",
+        "high-temperature superconductivity",
+        "heavy fermion",
+        "dynamical mean field theory",
+        "density matrix renormalization group",
+        "tensor network",
+        "quantum many-body",
+        "multiferroic",
+        "multiferroic materials",
+        "magnetoelectric coupling",
+        "ferroelectricity",
+        "ferromagnetism",
+        "spin-lattice coupling"
+      ],
+      "arxivCategories": [
+        "cond-mat.str-el",
+        "cond-mat.supr-con",
+        "cond-mat.mtrl-sci",
+        "cond-mat.mes-hall"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "title": "在这里放你的代表性论文题目",
+      "authors": "你的姓名 et al.",
+      "venue": "Journal or Conference",
+      "year": "2026"
+    }
+  ],
+  "paperFeed": {
+    "daysBack": 14,
+    "minPerModule": 5,
+    "maxPerModule": 10,
+    "maxPerSource": 60,
+    "contactEmail": "chengxuli@shhxinyuan.cn",
+    "queries": [
+      {
+        "name": "机器学习分子动力学模拟与热力学性质",
+        "keywords": [
+          "machine learning molecular dynamics",
+          "molecular dynamics machine learning potential",
+          "machine learning interatomic potential",
+          "neural network potential",
+          "deep potential molecular dynamics",
+          "DeepMD",
+          "DeePMD-kit",
+          "MACE potential",
+          "MACE interatomic potential",
+          "ab initio molecular dynamics machine learning",
+          "thermodynamic properties molecular dynamics",
+          "free energy machine learning potential",
+          "thermal conductivity molecular dynamics",
+          "phase transition molecular dynamics"
+        ],
+        "arxivCategories": [
+          "physics.comp-ph",
+          "physics.chem-ph",
+          "cond-mat.mtrl-sci",
+          "cond-mat.stat-mech",
+          "cs.LG"
+        ]
+      },
+      {
+        "name": "凝聚态物理强关联体系和多铁性质",
+        "keywords": [
+          "strongly correlated systems",
+          "strongly correlated electrons",
+          "Hubbard model",
+          "Mott insulator",
+          "quantum spin liquid",
+          "unconventional superconductivity",
+          "high-temperature superconductivity",
+          "heavy fermion",
+          "dynamical mean field theory",
+          "density matrix renormalization group",
+          "tensor network",
+          "quantum many-body",
+          "multiferroic",
+          "multiferroic materials",
+          "magnetoelectric coupling",
+          "ferroelectricity",
+          "ferromagnetism",
+          "spin-lattice coupling"
+        ],
+        "arxivCategories": [
+          "cond-mat.str-el",
+          "cond-mat.supr-con",
+          "cond-mat.mtrl-sci",
+          "cond-mat.mes-hall"
+        ]
+      }
+    ]
+  },
+  "position": "材料助理研究员",
+  "education": "上海大学博士",
+  "currentFocus": [
+    "我正在关注机器学习势函数和分子动力学模拟在热力学性质、相变、自由能与热输运计算中的可靠性和可迁移性。",
+    "我也关注凝聚态强关联体系和多铁材料中电子关联、磁电耦合与自旋-晶格耦合对宏观物性的影响。"
+  ]
+};
