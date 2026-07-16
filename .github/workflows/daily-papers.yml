@@ -1,0 +1,79 @@
+name: Daily paper refresh and Pages deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "data/papers.json"
+      - "data/papers.js"
+      - "data/latest-papers.md"
+      - "data/profile.js"
+  schedule:
+    # 08:00 Asia/Shanghai every day.
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch latest papers
+        if: github.event_name != 'push'
+        run: python scripts/fetch_papers.py --config data/profile.json --out data/papers.json --js data/papers.js --profile-js data/profile.js --markdown data/latest-papers.md --email
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_STARTTLS: ${{ secrets.SMTP_STARTTLS }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+
+      - name: Commit feed updates
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/papers.json data/papers.js data/profile.js data/latest-papers.md)" ]; then
+            git add data/papers.json data/papers.js data/profile.js data/latest-papers.md
+            git commit -m "Update daily paper feed"
+            git push
+          else
+            echo "No feed changes to commit."
+          fi
+
+      - name: Prepare Pages artifact
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp index.html _site/
+          cp .nojekyll _site/
+          cp -R assets data _site/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
