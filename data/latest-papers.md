@@ -1,6 +1,6 @@
 # Latest papers for 程旭丽
 
-Updated: 2026-07-16T09:40:56.067104+00:00
+Updated: 2026-07-16T15:11:17.366392+00:00
 Window: last 14 days
 
 ## 机器学习分子动力学模拟与热力学性质
@@ -82,7 +82,7 @@ Window: last 14 days
 - Venue: cs.LG
 - Authors: Mingxiang Luo, Xinnan Mao, Lu Wang, Lei Bai, Feng Ding, Yuqiang Li
 - Link: https://arxiv.org/abs/2607.09456v1
-- Score: 9.0
+- Score: 8.0
 - Match: 摘要匹配 machine learning interatomic potential; 近两周发布
 
 **文章摘要：** 该论文围绕“Active rejection enables reliable generalization of universal machine-learning interatomic potentials”展开，关注机器学习原子间势。作者通过系统基准测试比较模型或方法表现，用于理解相关体系的结构、动力学或物性响应。
@@ -96,7 +96,7 @@ Window: last 14 days
 - Venue: physics.comp-ph, cond-mat.mtrl-sci
 - Authors: Fengbo Yuan, Xin Zhong, Donghao Zheng, Jinzhe Zeng, Linfeng Zhang, Han Wang
 - Link: https://arxiv.org/abs/2607.05015v1
-- Score: 9.0
+- Score: 8.0
 - Match: 标题匹配 machine learning interatomic potential; 近两周发布
 
 **文章摘要：** 该论文围绕“dpti: An Automated Thermodynamic Integration Workflow for Phase Diagram Calculations with Machine Learning Interatomic Potentials”展开，关注机器学习原子间势。作者利用分子动力学或有限温度模拟检验体系行为，用于理解相关体系的结构、动力学或物性响应。
@@ -154,7 +154,7 @@ Window: last 14 days
 - Venue: cond-mat.mtrl-sci
 - Authors: Shengqiao Wang, Bo Zhao, Harish K. Singh, Jiahao Xie, Fu Li, Hongbin Zhang
 - Link: https://arxiv.org/abs/2607.12799v1
-- Score: 17.0
+- Score: 16.0
 - Match: 标题匹配 multiferroic; 最近 3 天发布
 
 **文章摘要：** 该论文围绕“Strain-Tunable Shift Current and Magneto-Optical Kerr Effect in Multiferroic Altermagnet Fe2Mo3O8”展开，关注多铁性。作者结合第一性原理或电子结构计算开展分析，用于理解相关体系的结构、动力学或物性响应。
@@ -168,7 +168,7 @@ Window: last 14 days
 - Venue: cond-mat.str-el
 - Authors: Ksenia S. Rabinovich, Tim Priessnitz, Nils Gross, George Jackeli, Maximilian J. Krautloher, Pascal Reiss
 - Link: https://arxiv.org/abs/2607.12737v1
-- Score: 17.0
+- Score: 16.0
 - Match: 标题匹配 Mott insulator; 最近 3 天发布
 
 **文章摘要：** 该论文围绕“Magnetic field-driven phase switching in the antiferromagnetic Mott insulator Ca$_3$(Ru$_{0.99}$Ti$_{0.01}$)$_2$O$_7$”展开，关注Mott 绝缘体。作者基于摘要中的模型、计算或实验结果展开研究，用于理解相关体系的结构、动力学或物性响应。
@@ -182,7 +182,7 @@ Window: last 14 days
 - Venue: cond-mat.str-el
 - Authors: Ryuta Iwazaki, Shinnosuke Koyama, Takashi Koretsune, Shintaro Hoshino, Joji Nasu
 - Link: https://arxiv.org/abs/2607.12595v1
-- Score: 16.0
+- Score: 15.0
 - Match: 摘要匹配 Hubbard model; 摘要匹配 Mott insulator; 最近 3 天发布
 
 **文章摘要：** 该论文围绕“Halogen control of magnetic competition in Kitaev candidate Ru$X_3$ ($X =$ Cl, Br)”展开，关注Hubbard 模型、Mott 绝缘体。作者结合第一性原理或电子结构计算开展分析，用于理解相关体系的结构、动力学或物性响应。
@@ -210,7 +210,7 @@ Window: last 14 days
 - Venue: cond-mat.str-el
 - Authors: Yueh-Chen Lee, Nikolay P. Prokof'ev, Andrey V. Chubukov
 - Link: https://arxiv.org/abs/2607.13675v1
-- Score: 14.0
+- Score: 13.0
 - Match: 摘要匹配 ferromagnetism; 最近 3 天发布
 
 **文章摘要：** 该论文围绕“Stoner transitions beyond mean-field in two-dimensional electronic systems: a diagrammatic Monte Carlo study”展开，关注铁磁性。作者基于摘要中的模型、计算或实验结果展开研究，用于理解相关体系的结构、动力学或物性响应。
@@ -266,7 +266,7 @@ Window: last 14 days
 - Venue: cs.ET, cond-mat.mes-hall, cs.AI
 - Authors: Zhengfei Chen, Alex Welbourne, Matthew O. A. Ellis, Dan A. Allwood, Eleni Vasilaki, Thomas J. Hayward
 - Link: https://arxiv.org/abs/2607.12840v1
-- Score: 13.0
+- Score: 12.0
 - Match: 摘要匹配 magnetoelectric coupling; 最近 3 天发布
 
 **文章摘要：** 该论文围绕“Reproducible Reservoir Computing with Thermally Driven Superparamagnets: Controlling Temperature Sensitivity”展开，关注磁电耦合。作者通过系统基准测试比较模型或方法表现，用于理解相关体系的结构、动力学或物性响应。

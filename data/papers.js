@@ -1,5 +1,5 @@
 window.RESEARCH_PAPER_FEED = {
-  "updatedAt": "2026-07-16T09:40:56.067104+00:00",
+  "updatedAt": "2026-07-16T15:11:17.366392+00:00",
   "daysBack": 14,
   "minPerModule": 5,
   "maxPerModule": 10,
@@ -273,7 +273,7 @@ window.RESEARCH_PAPER_FEED = {
             "thermal conductivity molecular dynamics",
             "phase transition molecular dynamics"
           ],
-          "score": 9.0,
+          "score": 8.0,
           "keywordMatches": 1,
           "matchReasons": [
             "摘要匹配 machine learning interatomic potential",
@@ -322,7 +322,7 @@ window.RESEARCH_PAPER_FEED = {
             "thermal conductivity molecular dynamics",
             "phase transition molecular dynamics"
           ],
-          "score": 9.0,
+          "score": 8.0,
           "keywordMatches": 1,
           "matchReasons": [
             "标题匹配 machine learning interatomic potential",
@@ -536,7 +536,7 @@ window.RESEARCH_PAPER_FEED = {
             "ferromagnetism",
             "spin-lattice coupling"
           ],
-          "score": 17.0,
+          "score": 16.0,
           "keywordMatches": 1,
           "matchReasons": [
             "标题匹配 multiferroic",
@@ -592,7 +592,7 @@ window.RESEARCH_PAPER_FEED = {
             "ferromagnetism",
             "spin-lattice coupling"
           ],
-          "score": 17.0,
+          "score": 16.0,
           "keywordMatches": 1,
           "matchReasons": [
             "标题匹配 Mott insulator",
@@ -643,7 +643,7 @@ window.RESEARCH_PAPER_FEED = {
             "ferromagnetism",
             "spin-lattice coupling"
           ],
-          "score": 16.0,
+          "score": 15.0,
           "keywordMatches": 2,
           "matchReasons": [
             "摘要匹配 Hubbard model",
@@ -756,7 +756,7 @@ window.RESEARCH_PAPER_FEED = {
             "ferromagnetism",
             "spin-lattice coupling"
           ],
-          "score": 14.0,
+          "score": 13.0,
           "keywordMatches": 1,
           "matchReasons": [
             "摘要匹配 ferromagnetism",
@@ -1287,7 +1287,7 @@ window.RESEARCH_PAPER_FEED = {
             "ferromagnetism",
             "spin-lattice coupling"
           ],
-          "score": 13.0,
+          "score": 12.0,
           "keywordMatches": 1,
           "matchReasons": [
             "摘要匹配 magnetoelectric coupling",
@@ -1621,7 +1621,7 @@ window.RESEARCH_PAPER_FEED = {
         "thermal conductivity molecular dynamics",
         "phase transition molecular dynamics"
       ],
-      "score": 9.0,
+      "score": 8.0,
       "keywordMatches": 1,
       "matchReasons": [
         "摘要匹配 machine learning interatomic potential",
@@ -1670,7 +1670,7 @@ window.RESEARCH_PAPER_FEED = {
         "thermal conductivity molecular dynamics",
         "phase transition molecular dynamics"
       ],
-      "score": 9.0,
+      "score": 8.0,
       "keywordMatches": 1,
       "matchReasons": [
         "标题匹配 machine learning interatomic potential",
@@ -1877,7 +1877,7 @@ window.RESEARCH_PAPER_FEED = {
         "ferromagnetism",
         "spin-lattice coupling"
       ],
-      "score": 17.0,
+      "score": 16.0,
       "keywordMatches": 1,
       "matchReasons": [
         "标题匹配 multiferroic",
@@ -1933,7 +1933,7 @@ window.RESEARCH_PAPER_FEED = {
         "ferromagnetism",
         "spin-lattice coupling"
       ],
-      "score": 17.0,
+      "score": 16.0,
       "keywordMatches": 1,
       "matchReasons": [
         "标题匹配 Mott insulator",
@@ -1984,7 +1984,7 @@ window.RESEARCH_PAPER_FEED = {
         "ferromagnetism",
         "spin-lattice coupling"
       ],
-      "score": 16.0,
+      "score": 15.0,
       "keywordMatches": 2,
       "matchReasons": [
         "摘要匹配 Hubbard model",
@@ -2097,7 +2097,7 @@ window.RESEARCH_PAPER_FEED = {
         "ferromagnetism",
         "spin-lattice coupling"
       ],
-      "score": 14.0,
+      "score": 13.0,
       "keywordMatches": 1,
       "matchReasons": [
         "摘要匹配 ferromagnetism",
@@ -2628,7 +2628,7 @@ window.RESEARCH_PAPER_FEED = {
         "ferromagnetism",
         "spin-lattice coupling"
       ],
-      "score": 13.0,
+      "score": 12.0,
       "keywordMatches": 1,
       "matchReasons": [
         "摘要匹配 magnetoelectric coupling",
