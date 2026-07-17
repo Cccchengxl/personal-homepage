@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="个人学术主页和每日论文推荐">
     <title>个人学术主页</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.css?v=20260717-single-column">
+    <style>
+      .paper-module-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      .paper-insight {
+        display: block !important;
+        overflow: visible !important;
+        -webkit-line-clamp: unset !important;
+        -webkit-box-orient: initial !important;
+        line-height: 1.7 !important;
+        white-space: normal !important;
+      }
+    </style>
   </head>
   <body>
     <header class="site-header" aria-label="主导航">

@@ -506,7 +506,7 @@ h3 {
 
 .paper-module-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr !important;
   gap: 16px;
 }
 
@@ -570,7 +570,10 @@ h3 {
 }
 
 .paper-insight {
-  overflow: visible;
+  display: block !important;
+  overflow: visible !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: initial !important;
   line-height: 1.7;
   white-space: normal;
 }
