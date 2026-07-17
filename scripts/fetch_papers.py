@@ -21,7 +21,30 @@ from xml.etree import ElementTree as ET
 
 ARXIV_API = "https://export.arxiv.org/api/query"
 CROSSREF_API = "https://api.crossref.org/works"
+GOOGLE_TRANSLATE_API = "https://translate.googleapis.com/translate_a/single"
+MYMEMORY_TRANSLATE_API = "https://api.mymemory.translated.net/get"
 ATOM_NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
+TOP_JOURNALS = [
+    "Nature",
+    "Science",
+    "Physical Review Letters",
+    "Nature Physics",
+    "Nature Materials",
+    "Nature Nanotechnology",
+    "Nature Chemistry",
+    "Nature Computational Science",
+    "Nature Communications",
+    "Science Advances",
+    "Proceedings of the National Academy of Sciences",
+    "PNAS",
+]
+TOP_JOURNAL_SELECTOR_VERSION = 3
+DEFAULT_TOP_JOURNAL_SEARCH_PHRASES = [
+    "machine learning molecular dynamics interatomic potential thermodynamic",
+    "DeepMD MACE machine learning potential",
+    "strongly correlated electrons Mott Hubbard quantum spin liquid",
+    "multiferroic ferroelectric magnetoelectric altermagnetism altermagnetic",
+]
 
 
 def utc_now() -> dt.datetime:
@@ -46,6 +69,16 @@ def clean_html(value: str) -> str:
 def read_config(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def read_json_if_exists(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        with path.open("r", encoding="utf-8") as handle:
+            return json.load(handle)
+    except (json.JSONDecodeError, OSError):
+        return {}
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -229,6 +262,134 @@ def fetch_crossref(query: dict[str, Any], rows: int, days_back: int, user_agent:
     return papers
 
 
+def top_journal_config(config: dict[str, Any]) -> dict[str, Any]:
+    feed = config.get("paperFeed", {})
+    top = feed.get("topJournalFeed") or {}
+    return {
+        "enabled": top.get("enabled", True),
+        "daysBack": int(top.get("daysBack", 180)),
+        "maxPapers": int(top.get("maxPapers", 12)),
+        "rowsPerPhrase": int(top.get("rowsPerPhrase", 20)),
+        "archiveMonths": int(top.get("archiveMonths", 12)),
+        "journals": top.get("journals") or TOP_JOURNALS,
+        "searchPhrases": top.get("searchPhrases") or DEFAULT_TOP_JOURNAL_SEARCH_PHRASES,
+    }
+
+
+def journal_matches_top_venue(venue: str, journals: list[str]) -> str:
+    venue_l = squash(venue).lower()
+    if not venue_l:
+        return ""
+    for journal in journals:
+        journal_l = squash(journal).lower()
+        if journal_l in {"nature", "science", "pnas"}:
+            if venue_l == journal_l:
+                return journal
+            continue
+        if venue_l == journal_l or venue_l.startswith(f"{journal_l} ") or journal_l in venue_l:
+            return journal
+    return ""
+
+
+def fetch_top_journal_crossref(
+    phrase: str,
+    rows: int,
+    days_back: int,
+    journals: list[str],
+    user_agent: str,
+    mailto: str | None,
+) -> list[dict[str, Any]]:
+    start_date = iso_date(utc_now() - dt.timedelta(days=days_back))
+    params = {
+        "query": phrase,
+        "filter": f"from-pub-date:{start_date},type:journal-article",
+        "sort": "published",
+        "order": "desc",
+        "rows": str(rows),
+        "select": "DOI,title,author,abstract,published,published-online,published-print,created,deposited,container-title,URL,subject",
+    }
+    if mailto:
+        params["mailto"] = mailto
+    url = f"{CROSSREF_API}?{urlencode(params)}"
+    payload = request_json(url, user_agent)
+    papers = []
+
+    for item in payload.get("message", {}).get("items", []):
+        title = squash((item.get("title") or [""])[0])
+        venue = squash((item.get("container-title") or [""])[0])
+        matched_venue = journal_matches_top_venue(venue, journals)
+        if not title or not matched_venue:
+            continue
+        paper = {
+            "source": "Top Journal",
+            "query": "顶刊相关论文",
+            "title": title,
+            "authors": crossref_authors(item),
+            "abstract": clean_html(item.get("abstract", "")),
+            "published": crossref_date(item),
+            "url": item.get("URL", ""),
+            "doi": item.get("DOI", ""),
+            "venue": venue or matched_venue,
+            "subjects": item.get("subject", []),
+            "keywords": [phrase],
+        }
+        paper["topJournal"] = matched_venue
+        paper["topJournalSearchPhrase"] = phrase
+        papers.append(paper)
+    return papers
+
+
+def fetch_top_journal_for_venue(
+    journal: str,
+    query_text: str,
+    rows: int,
+    days_back: int,
+    journals: list[str],
+    keywords: list[str],
+    user_agent: str,
+    mailto: str | None,
+) -> list[dict[str, Any]]:
+    start_date = iso_date(utc_now() - dt.timedelta(days=days_back))
+    params = {
+        "query.container-title": journal,
+        "query": query_text,
+        "filter": f"from-pub-date:{start_date},type:journal-article",
+        "sort": "published",
+        "order": "desc",
+        "rows": str(rows),
+        "select": "DOI,title,author,abstract,published,published-online,published-print,created,deposited,container-title,URL,subject",
+    }
+    if mailto:
+        params["mailto"] = mailto
+    url = f"{CROSSREF_API}?{urlencode(params)}"
+    payload = request_json(url, user_agent, timeout=25)
+    papers = []
+
+    for item in payload.get("message", {}).get("items", []):
+        title = squash((item.get("title") or [""])[0])
+        venue = squash((item.get("container-title") or [""])[0])
+        matched_venue = journal_matches_top_venue(venue, journals)
+        if not title or not matched_venue:
+            continue
+        paper = {
+            "source": "Top Journal",
+            "query": "顶刊相关论文",
+            "title": title,
+            "authors": crossref_authors(item),
+            "abstract": clean_html(item.get("abstract", "")),
+            "published": crossref_date(item),
+            "url": item.get("URL", ""),
+            "doi": item.get("DOI", ""),
+            "venue": venue or matched_venue,
+            "subjects": item.get("subject", []),
+            "keywords": keywords,
+        }
+        paper["topJournal"] = matched_venue
+        paper["topJournalSearchPhrase"] = query_text
+        papers.append(paper)
+    return papers
+
+
 def parse_date(value: str) -> dt.datetime | None:
     if not value:
         return None
@@ -269,6 +430,97 @@ def first_matching_sentence(sentences: list[str], patterns: list[str]) -> str:
     return ""
 
 
+TRANSLATION_CACHE: dict[str, str] = {}
+
+
+def contains_cjk(value: str) -> bool:
+    return any("\u4e00" <= char <= "\u9fff" for char in value)
+
+
+def translation_chunks(value: str, limit: int = 1200) -> list[str]:
+    sentences = split_sentences(value) or [squash(value)]
+    chunks: list[str] = []
+    current = ""
+    for sentence in sentences:
+        if not sentence:
+            continue
+        if current and len(current) + len(sentence) + 1 > limit:
+            chunks.append(current)
+            current = sentence
+        else:
+            current = f"{current} {sentence}".strip()
+    if current:
+        chunks.append(current)
+    return chunks
+
+
+def translate_chunk_google(chunk: str) -> str:
+    params = {
+        "client": "gtx",
+        "sl": "auto",
+        "tl": "zh-CN",
+        "dt": "t",
+        "q": chunk,
+    }
+    url = f"{GOOGLE_TRANSLATE_API}?{urlencode(params)}"
+    payload = json.loads(request_text(url, "personal-homepage-translate/1.0", timeout=5, attempts=1))
+    return squash("".join(
+        part[0]
+        for part in payload[0]
+        if isinstance(part, list) and part and part[0]
+    ))
+
+
+def translate_chunk_mymemory(chunk: str) -> str:
+    params = {
+        "q": chunk,
+        "langpair": "en|zh-CN",
+    }
+    url = f"{MYMEMORY_TRANSLATE_API}?{urlencode(params)}"
+    payload = json.loads(request_text(url, "personal-homepage-translate/1.0", timeout=10, attempts=1))
+    return squash(payload.get("responseData", {}).get("translatedText", ""))
+
+
+def translate_to_zh(value: str) -> str:
+    text = squash(value)
+    if not text:
+        return ""
+    if contains_cjk(text):
+        return text
+    cached = TRANSLATION_CACHE.get(text)
+    if cached is not None:
+        return cached
+
+    translated_chunks = []
+    failed_chunks = 0
+    for chunk in translation_chunks(text, limit=600)[:4]:
+        try:
+            translated = translate_chunk_google(chunk)
+            if not translated:
+                translated = translate_chunk_mymemory(chunk)
+            translated_chunks.append(translated)
+            time.sleep(0.05)
+        except Exception as exc:  # noqa: BLE001 - translation must not break the scheduled update.
+            try:
+                translated = translate_chunk_mymemory(chunk)
+                if translated:
+                    translated_chunks.append(translated)
+                    time.sleep(0.05)
+                    continue
+            except Exception as fallback_exc:  # noqa: BLE001
+                print(f"Fallback translation chunk skipped: {fallback_exc}", file=sys.stderr)
+            failed_chunks += 1
+            print(f"Translation chunk skipped: {exc}", file=sys.stderr)
+            if not translated_chunks:
+                break
+
+    result = squash(" ".join(translated_chunks))
+    if result and failed_chunks:
+        result = f"{result}（部分摘要片段自动翻译失败，建议打开原文核对完整摘要。）"
+    TRANSLATION_CACHE[text] = result
+    return result
+
+
 KEYWORD_ZH = {
     "machine learning interatomic potential": "机器学习原子间势",
     "machine learning molecular dynamics": "机器学习分子动力学",
@@ -300,6 +552,11 @@ KEYWORD_ZH = {
     "ferroelectricity": "铁电性",
     "ferromagnetism": "铁磁性",
     "spin-lattice coupling": "自旋-晶格耦合",
+    "交变磁性": "交变磁性",
+    "altermagnetism": "交变磁性",
+    "altermagnetic": "交变磁性",
+    "altermagnet": "交变磁性",
+    "altermagnetic materials": "交变磁性材料",
 }
 
 
@@ -326,25 +583,76 @@ def infer_method_zh(text: str) -> str:
     return "基于摘要中的模型、计算或实验结果展开研究"
 
 
-def build_chinese_paper_insights(paper: dict[str, Any], insights: dict[str, str]) -> dict[str, str]:
-    title = squash(paper.get("title", ""))
-    text = " ".join([paper.get("title", ""), paper.get("abstract", ""), insights.get("discussionFocus", "")])
+def matched_terms_for_paper(paper: dict[str, Any], text: str) -> list[str]:
     matched_terms = []
     for reason in paper.get("matchReasons", []):
         if "匹配 " in reason:
             matched_terms.append(reason.split("匹配 ", 1)[1])
     if not matched_terms:
-        matched_terms = [item for item in paper.get("keywords", []) if item.lower() in text.lower()][:3]
-    terms_zh = "、".join(dict.fromkeys(keyword_to_zh(item) for item in matched_terms[:4]))
-    if not terms_zh:
-        terms_zh = "该方向的核心科学问题"
+        text_l = text.lower()
+        matched_terms = [
+            item for item in paper.get("keywords", [])
+            if isinstance(item, str) and item.lower() in text_l
+        ][:4]
+    return list(dict.fromkeys(matched_terms))
 
-    method_zh = infer_method_zh(text)
-    return {
-        "articleSummaryZh": trim_text(f"该论文围绕“{title}”展开，关注{terms_zh}。作者{method_zh}，用于理解相关体系的结构、动力学或物性响应。", 420),
-        "discussionFocusZh": trim_text(f"讨论重点是{terms_zh}，以及这些概念如何影响模型精度、材料性质或物理机制解释。", 420),
-        "mainConclusionZh": trim_text("主要结论需要结合原文摘要和正文进一步确认；从当前元数据看，该工作给出了与上述关键词直接相关的方法、基准或物性结果。", 420),
-    }
+
+def discussion_aspect_zh(text: str) -> str:
+    lowered = text.lower()
+    if "altermagnet" in lowered:
+        return "交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应"
+    if "multiferroic" in lowered or "ferroelectric" in lowered or "magnetoelectric" in lowered:
+        return "极化翻转、磁电耦合、自旋-晶格耦合以及多铁序参量之间的相互制约"
+    if "hubbard" in lowered or "mott" in lowered or "strongly correlated" in lowered:
+        return "有效模型参数、电子关联强度、相图边界以及可与实验对照的谱学或输运信号"
+    if "benchmark" in lowered or "compare" in lowered or "outperform" in lowered:
+        return "基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍"
+    if "free energy" in lowered or "thermodynamic" in lowered or "phase diagram" in lowered:
+        return "自由能路径、相稳定性、热力学量的不确定性，以及势函数误差如何传递到宏观性质"
+    if "molecular dynamics" in lowered or "finite-temperature" in lowered or "thermal conductivity" in lowered:
+        return "模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性"
+    if "first-principles" in lowered or "density functional" in lowered or "dft" in lowered or "berry" in lowered:
+        return "第一性原理设置、对称性分析、能带或响应函数计算，以及这些量与可观测物性的对应关系"
+    if "propose" in lowered or "introduce" in lowered or "develop" in lowered or "framework" in lowered:
+        return "新方法的假设、训练或计算流程、适用体系，以及与已有方法相比的优势和局限"
+    if "experiment" in lowered or "measure" in lowered or "spectroscop" in lowered:
+        return "样品制备、实验表征条件、关键观测信号，以及这些信号如何支撑物理机制解释"
+    return "研究对象、方法假设、关键参数、数据来源，以及结果能否迁移到相邻材料或物理体系"
+
+
+def build_discussion_focus_zh(paper: dict[str, Any], sentences: list[str], matched_terms: list[str]) -> str:
+    text = " ".join([paper.get("title", ""), paper.get("abstract", "")])
+    focus_sentences = []
+    for patterns in [
+        [r"\b(propose|present|develop|introduce|construct|design)\b"],
+        [r"\b(study|investigate|explore|analy[sz]e|examine|benchmark)\b"],
+        [r"\b(simulat|calculat|model|method|approach|framework|measure|experiment)\b"],
+    ]:
+        sentence = first_matching_sentence(sentences, patterns)
+        if sentence and sentence not in focus_sentences:
+            focus_sentences.append(sentence)
+    if not focus_sentences and sentences:
+        focus_sentences.append(sentences[0])
+    if len(focus_sentences) < 2 and len(sentences) > 1:
+        for sentence in sentences[1:]:
+            if sentence not in focus_sentences:
+                focus_sentences.append(sentence)
+                break
+
+    translated_focus = translate_to_zh(" ".join(focus_sentences[:2]))
+    terms_zh = "、".join(dict.fromkeys(keyword_to_zh(item) for item in matched_terms[:4]))
+    aspect = discussion_aspect_zh(text)
+
+    parts = []
+    if translated_focus:
+        parts.append(translated_focus)
+    elif focus_sentences:
+        parts.append("可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。")
+    if terms_zh:
+        parts.append(f"结合关键词看，阅读时应重点关注{terms_zh}相关的{aspect}。")
+    else:
+        parts.append(f"阅读时应重点关注{aspect}。")
+    return trim_text(" ".join(parts), 900)
 
 
 def build_paper_insights(paper: dict[str, Any]) -> dict[str, str]:
@@ -354,12 +662,11 @@ def build_paper_insights(paper: dict[str, Any]) -> dict[str, str]:
     reasons = paper.get("matchReasons", [])
     keywords = paper.get("keywords", [])
 
-    if sentences:
-        article_summary = " ".join(sentences[:2])
-    elif abstract:
-        article_summary = abstract
-    else:
-        article_summary = f"该论文围绕“{title}”展开，当前元数据未提供摘要。"
+    abstract_zh = translate_to_zh(abstract)
+    if not abstract_zh and abstract:
+        abstract_zh = f"自动翻译暂不可用，以下为原文摘要：{abstract}"
+    elif not abstract_zh:
+        abstract_zh = f"当前元数据未提供原文摘要。论文题目为“{title}”。"
 
     focus_sentence = first_matching_sentence(sentences, [
         r"\b(propose|present|develop|introduce|construct|design)\b",
@@ -371,35 +678,29 @@ def build_paper_insights(paper: dict[str, Any]) -> dict[str, str]:
     elif not focus_sentence and sentences:
         focus_sentence = sentences[0]
 
-    matched_terms = []
-    for reason in reasons:
-        if "匹配 " in reason:
-            matched_terms.append(reason.split("匹配 ", 1)[1])
-    if not matched_terms:
-        matched_terms = [item for item in keywords if item.lower() in (title + " " + abstract).lower()][:3]
+    matched_terms = matched_terms_for_paper(paper, title + " " + abstract)
     term_text = "、".join(dict.fromkeys(matched_terms[:4]))
-
-    conclusion_sentence = first_matching_sentence(sentences, [
-        r"\b(show|shows|shown|demonstrate|demonstrates|reveal|reveals|find|finds|found)\b",
-        r"\b(result|results|conclude|conclusion|suggest|suggests|indicate|indicates)\b",
-        r"\b(enable|enables|improve|improves|outperform|accurate|accuracy|stable|robust)\b",
-    ])
-    if not conclusion_sentence and sentences:
-        conclusion_sentence = sentences[-1]
 
     discussion_focus = f"重点围绕 {term_text} 展开。" if term_text else f"重点围绕题目中的核心问题“{title}”展开。"
     if focus_sentence:
         discussion_focus = f"{discussion_focus} {focus_sentence}"
 
-    main_conclusion = conclusion_sentence or "当前摘要未明确给出结论句，需要阅读全文进一步确认主要结论。"
-
     insights = {
-        "articleSummary": trim_text(article_summary, 620),
+        "abstractOriginal": abstract,
+        "abstractZh": trim_text(abstract_zh, 1800),
+        "articleSummary": abstract,
+        "articleSummaryZh": trim_text(abstract_zh, 1800),
         "discussionFocus": trim_text(discussion_focus, 620),
-        "mainConclusion": trim_text(main_conclusion, 620),
+        "discussionFocusZh": build_discussion_focus_zh(paper, sentences, matched_terms),
     }
-    insights.update(build_chinese_paper_insights(paper, insights))
     return insights
+
+
+def refresh_paper_insights(paper: dict[str, Any]) -> dict[str, Any]:
+    paper.pop("mainConclusion", None)
+    paper.pop("mainConclusionZh", None)
+    paper.update(build_paper_insights(paper))
+    return paper
 
 
 def score_paper(paper: dict[str, Any]) -> dict[str, Any]:
@@ -430,6 +731,14 @@ def score_paper(paper: dict[str, Any]) -> dict[str, Any]:
             keyword_matches += 1
             reasons.append(f"来源匹配 {keyword}")
 
+    if paper.get("topJournal") and paper.get("topJournalSearchPhrase"):
+        score += 6
+        reasons.append(f"顶刊来源 {paper['topJournal']}")
+        if keyword_matches == 0:
+            keyword_matches += 1
+            score += 3
+            reasons.append(f"顶刊检索匹配 {paper['topJournalSearchPhrase']}")
+
     published = parse_date(paper.get("published", ""))
     if published:
         age_days = max(0, (utc_now() - published.astimezone(dt.timezone.utc)).days)
@@ -445,8 +754,7 @@ def score_paper(paper: dict[str, Any]) -> dict[str, Any]:
     paper["score"] = round(score, 2)
     paper["keywordMatches"] = keyword_matches
     paper["matchReasons"] = reasons[:4]
-    paper.update(build_paper_insights(paper))
-    return paper
+    return refresh_paper_insights(paper)
 
 
 def dedupe_key(paper: dict[str, Any]) -> str:
@@ -481,34 +789,216 @@ def dedupe_and_rank(papers: list[dict[str, Any]], top_n: int | None = None) -> l
     return ranked[:top_n] if top_n else ranked
 
 
-def build_feed(config: dict[str, Any], offline: bool = False) -> dict[str, Any]:
+def clone_payload(value: Any) -> Any:
+    return json.loads(json.dumps(value, ensure_ascii=False))
+
+
+def date_part(value: str) -> str:
+    parsed = parse_date(value)
+    return parsed.date().isoformat() if parsed else squash(value)[:10]
+
+
+def month_part(value: str) -> str:
+    parsed = parse_date(value)
+    if parsed:
+        return f"{parsed.year:04d}-{parsed.month:02d}"
+    value = squash(value)
+    return value[:7] if len(value) >= 7 else value
+
+
+def flatten_module_papers(modules: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    papers: list[dict[str, Any]] = []
+    for module in modules:
+        papers.extend(module.get("papers", []))
+    return papers
+
+
+def previous_module_papers(previous_feed: dict[str, Any], module_name: str) -> list[dict[str, Any]]:
+    for module in previous_feed.get("modules", []):
+        if module.get("name") == module_name and module.get("papers"):
+            return [
+                refresh_paper_insights(paper)
+                for paper in clone_payload(module.get("papers", []))
+            ]
+    return []
+
+
+def update_daily_archive(previous_feed: dict[str, Any], today: str, archive_days: int) -> list[dict[str, Any]]:
+    archive = clone_payload(previous_feed.get("dailyArchive") or [])
+    previous_date = date_part(previous_feed.get("updatedAt", ""))
+    previous_modules = [
+        module for module in previous_feed.get("modules", [])
+        if module.get("papers")
+    ]
+
+    if previous_date and previous_date != today and flatten_module_papers(previous_modules):
+        archive = [entry for entry in archive if entry.get("date") != previous_date]
+        archive.insert(0, {
+            "date": previous_date,
+            "label": f"{previous_date} 每日推荐",
+            "description": f"自动归档的 {previous_date} 每日论文推荐。",
+            "modules": clone_payload(previous_modules),
+            "papers": clone_payload(flatten_module_papers(previous_modules)),
+        })
+
+    archive = sorted(archive, key=lambda item: item.get("date", ""), reverse=True)
+    return archive[:archive_days]
+
+
+def append_monthly_archive(
+    archive: list[dict[str, Any]],
+    existing: dict[str, Any],
+    current_period: str,
+    archive_months: int,
+) -> list[dict[str, Any]]:
+    existing_period = existing.get("period") or month_part(existing.get("updatedAt", ""))
+    existing_papers = existing.get("papers") or []
+    if existing_period and existing_period != current_period and existing_papers:
+        archive = [entry for entry in archive if entry.get("date") != existing_period]
+        archive.insert(0, {
+            "date": existing_period,
+            "label": f"{existing_period} 顶刊推荐",
+            "description": f"自动归档的 {existing_period} 顶刊相关论文。",
+            "papers": clone_payload(existing_papers),
+        })
+    archive = sorted(archive, key=lambda item: item.get("date", ""), reverse=True)
+    return archive[:archive_months]
+
+
+def build_top_journal_feed(
+    config: dict[str, Any],
+    previous_feed: dict[str, Any],
+    offline: bool,
+    user_agent: str,
+    mailto: str | None,
+    notes: list[str],
+) -> dict[str, Any]:
+    top_config = top_journal_config(config)
+    current_period = utc_now().strftime("%Y-%m")
+    existing = clone_payload(previous_feed.get("topJournal") or {})
+    archive = append_monthly_archive(
+        existing.get("archive") or [],
+        existing,
+        current_period,
+        int(top_config.get("archiveMonths", 12)),
+    )
+
+    if not top_config.get("enabled", True):
+        return {
+            "updatedAt": existing.get("updatedAt"),
+            "period": existing.get("period") or current_period,
+            "selectorVersion": TOP_JOURNAL_SELECTOR_VERSION,
+            "journals": top_config.get("journals", TOP_JOURNALS),
+            "papers": existing.get("papers") or [],
+            "archive": archive,
+            "status": "disabled",
+        }
+
+    if (
+        existing.get("period") == current_period
+        and existing.get("papers")
+        and existing.get("selectorVersion") == TOP_JOURNAL_SELECTOR_VERSION
+    ):
+        existing["archive"] = archive
+        return existing
+
+    if offline:
+        return {
+            "updatedAt": utc_now().isoformat(),
+            "period": current_period,
+            "selectorVersion": TOP_JOURNAL_SELECTOR_VERSION,
+            "journals": top_config.get("journals", TOP_JOURNALS),
+            "papers": existing.get("papers") or [],
+            "archive": archive,
+            "status": "offline_validation",
+        }
+
+    top_papers: list[dict[str, Any]] = []
+    phrases = [item for item in top_config.get("searchPhrases", []) if item]
+    journals = [item for item in top_config.get("journals", TOP_JOURNALS) if item]
+    ranking_keywords = list(dict.fromkeys([
+        keyword
+        for query in query_configs(config)
+        for keyword in query.get("keywords", [])
+    ] + phrases))
+    query_text = squash(top_config.get("queryText") or " ".join(phrases))
+    for index, journal in enumerate(journals):
+        try:
+            top_papers.extend(fetch_top_journal_for_venue(
+                journal,
+                query_text,
+                int(top_config.get("rowsPerPhrase", 20)),
+                int(top_config.get("daysBack", 180)),
+                journals,
+                ranking_keywords,
+                user_agent,
+                mailto,
+            ))
+        except Exception as exc:  # noqa: BLE001 - monthly top-journal feed should not break daily updates.
+            notes.append(f"Top-journal query failed for {journal}: {exc}")
+        if index < len(journals) - 1:
+            time.sleep(0.6)
+
+    ranked = dedupe_and_rank(top_papers, int(top_config.get("maxPapers", 12)))
+    if (
+        not ranked
+        and existing.get("period") == current_period
+        and existing.get("selectorVersion") == TOP_JOURNAL_SELECTOR_VERSION
+        and existing.get("papers")
+    ):
+        ranked = clone_payload(existing.get("papers", []))[: int(top_config.get("maxPapers", 12))]
+        notes.append("Top-journal feed kept previous papers because the current query returned 0 results.")
+    if not ranked:
+        notes.append("Top-journal feed returned 0 papers for the configured journal list and keywords.")
+
+    return {
+        "updatedAt": utc_now().isoformat(),
+        "period": current_period,
+        "selectorVersion": TOP_JOURNAL_SELECTOR_VERSION,
+        "daysBack": int(top_config.get("daysBack", 180)),
+        "journals": journals,
+        "searchPhrases": phrases,
+        "papers": ranked,
+        "archive": archive,
+        "status": "ok" if ranked else "no_results",
+    }
+
+
+def build_feed(config: dict[str, Any], offline: bool = False, previous_feed: dict[str, Any] | None = None) -> dict[str, Any]:
     feed_config = config.get("paperFeed", {})
     days_back = int(feed_config.get("daysBack", 14))
     rows = int(feed_config.get("maxPerSource", 20))
     per_module_min = int(feed_config.get("minPerModule", feed_config.get("perQueryMin", 5)))
     per_module_max = int(feed_config.get("maxPerModule", feed_config.get("perQueryMax", 10)))
+    archive_days = int(feed_config.get("archiveDays", 60))
     user_agent = build_user_agent(config)
     mailto = feed_config.get("contactEmail") or config.get("email")
     queries = query_configs(config)
+    previous_feed = previous_feed or {}
+    today = utc_now().date().isoformat()
+    daily_archive = update_daily_archive(previous_feed, today, archive_days)
+    notes = []
 
     if offline:
+        top_journal = build_top_journal_feed(config, previous_feed, True, user_agent, mailto, notes)
         return {
             "updatedAt": utc_now().isoformat(),
             "daysBack": days_back,
             "minPerModule": per_module_min,
             "maxPerModule": per_module_max,
             "status": "offline_validation",
-            "notes": ["离线验证模式未访问 arXiv 或 Crossref。"],
+            "notes": ["离线验证模式未访问 arXiv 或 Crossref。", *notes],
             "modules": [
                 {"name": query.get("name", "Research"), "papers": []}
                 for query in queries
             ],
+            "dailyArchive": daily_archive,
+            "topJournal": top_journal,
             "papers": [],
         }
 
     all_ranked: list[dict[str, Any]] = []
     modules: list[dict[str, Any]] = []
-    notes = []
     for index, query in enumerate(queries):
         query_papers: list[dict[str, Any]] = []
         try:
@@ -524,6 +1014,11 @@ def build_feed(config: dict[str, Any], offline: bool = False) -> dict[str, Any]:
             notes.append(f"Crossref query failed for {query.get('name', 'Research')}: {exc}")
 
         ranked_for_query = dedupe_and_rank(query_papers, per_module_max)
+        if not ranked_for_query:
+            fallback_papers = previous_module_papers(previous_feed, query.get("name", "Research"))
+            if fallback_papers:
+                ranked_for_query = fallback_papers[:per_module_max]
+                notes.append(f"{query.get('name', 'Research')} kept previous papers because the current query returned 0 results.")
         if len(ranked_for_query) < per_module_min:
             notes.append(
                 f"{query.get('name', 'Research')} returned {len(ranked_for_query)} papers; "
@@ -537,6 +1032,8 @@ def build_feed(config: dict[str, Any], offline: bool = False) -> dict[str, Any]:
         })
         all_ranked.extend(ranked_for_query)
 
+    top_journal = build_top_journal_feed(config, previous_feed, False, user_agent, mailto, notes)
+
     return {
         "updatedAt": utc_now().isoformat(),
         "daysBack": days_back,
@@ -545,6 +1042,8 @@ def build_feed(config: dict[str, Any], offline: bool = False) -> dict[str, Any]:
         "status": "ok" if all_ranked else "no_results",
         "notes": notes,
         "modules": modules,
+        "dailyArchive": daily_archive,
+        "topJournal": top_journal,
         "papers": all_ranked,
     }
 
@@ -584,15 +1083,12 @@ def write_markdown(path: Path, feed: dict[str, Any], profile: dict[str, Any]) ->
                 ])
                 if paper.get("matchReasons"):
                     lines.append(f"- Match: {'; '.join(paper['matchReasons'])}")
-                article_summary = paper.get("articleSummaryZh") or paper.get("articleSummary")
+                article_summary = paper.get("abstractZh") or paper.get("articleSummaryZh") or paper.get("articleSummary")
                 discussion_focus = paper.get("discussionFocusZh") or paper.get("discussionFocus")
-                main_conclusion = paper.get("mainConclusionZh") or paper.get("mainConclusion")
                 if article_summary:
-                    lines.extend(["", f"**文章摘要：** {article_summary}"])
+                    lines.extend(["", f"**中文摘要：** {article_summary}"])
                 if discussion_focus:
                     lines.append(f"**讨论重点：** {discussion_focus}")
-                if main_conclusion:
-                    lines.append(f"**主要结论：** {main_conclusion}")
                 lines.append("")
     elif not feed.get("papers"):
         lines.extend(["No papers were found for the current configuration.", ""])
@@ -611,15 +1107,12 @@ def write_markdown(path: Path, feed: dict[str, Any], profile: dict[str, Any]) ->
             ])
             if paper.get("matchReasons"):
                 lines.append(f"- Match: {'; '.join(paper['matchReasons'])}")
-            article_summary = paper.get("articleSummaryZh") or paper.get("articleSummary")
+            article_summary = paper.get("abstractZh") or paper.get("articleSummaryZh") or paper.get("articleSummary")
             discussion_focus = paper.get("discussionFocusZh") or paper.get("discussionFocus")
-            main_conclusion = paper.get("mainConclusionZh") or paper.get("mainConclusion")
             if article_summary:
-                lines.extend(["", f"**文章摘要：** {article_summary}"])
+                lines.extend(["", f"**中文摘要：** {article_summary}"])
             if discussion_focus:
                 lines.append(f"**讨论重点：** {discussion_focus}")
-            if main_conclusion:
-                lines.append(f"**主要结论：** {main_conclusion}")
             lines.append("")
 
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -660,15 +1153,12 @@ def send_email(feed: dict[str, Any], profile: dict[str, Any]) -> bool:
             ])
             if paper.get("matchReasons"):
                 lines.append(f"   Match: {'; '.join(paper['matchReasons'])}")
-            article_summary = paper.get("articleSummaryZh") or paper.get("articleSummary")
+            article_summary = paper.get("abstractZh") or paper.get("articleSummaryZh") or paper.get("articleSummary")
             discussion_focus = paper.get("discussionFocusZh") or paper.get("discussionFocus")
-            main_conclusion = paper.get("mainConclusionZh") or paper.get("mainConclusion")
             if article_summary:
-                lines.append(f"   文章摘要：{article_summary}")
+                lines.append(f"   中文摘要：{article_summary}")
             if discussion_focus:
                 lines.append(f"   讨论重点：{discussion_focus}")
-            if main_conclusion:
-                lines.append(f"   主要结论：{main_conclusion}")
             lines.append("")
         lines.append("")
 
@@ -703,7 +1193,8 @@ def main() -> int:
     args = parse_args()
     config_path = Path(args.config)
     config = read_config(config_path)
-    feed = build_feed(config, offline=args.offline)
+    previous_feed = read_json_if_exists(Path(args.out))
+    feed = build_feed(config, offline=args.offline, previous_feed=previous_feed)
 
     write_json(Path(args.out), feed)
     write_js_assignment(Path(args.js), "RESEARCH_PAPER_FEED", feed)

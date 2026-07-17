@@ -6,7 +6,7 @@
   "location": "上海，中国",
   "email": "chengxuli@shhxinyuan.cn",
   "summary": "我的研究聚焦机器学习分子动力学模拟、热力学性质预测以及凝聚态物理中的强关联体系和多铁性质。",
-  "about": "我在上海大学获得博士学位，现任助理研究员。我正在关注机器学习势函数和分子动力学模拟在热力学性质、相变、自由能与热输运计算中的可靠性和可迁移性。我也关注凝聚态强关联体系和多铁材料中电子关联、磁电耦合与自旋-晶格耦合对宏观物性的影响。",
+  "about": "我在上海大学获得理学博士学位，现任材料助理研究员。我正在关注机器学习势函数和分子动力学模拟在热力学性质、相变、自由能与热输运计算中的可靠性和可迁移性。我也关注凝聚态强关联体系、交变磁性和多铁材料中电子关联、磁电耦合与自旋-晶格耦合对宏观物性的影响。",
   "contactText": "欢迎围绕研究合作、论文交流、数据集和开源工具建设联系我。",
   "tags": [
     "ML Molecular Dynamics",
@@ -61,7 +61,7 @@
     },
     {
       "name": "凝聚态物理强关联体系和多铁性质",
-      "description": "强关联电子体系、多铁材料、铁电性、铁磁性、磁电耦合和量子多体物理。",
+      "description": "强关联电子体系、多铁材料、交变磁性、铁电性、铁磁性、磁电耦合和量子多体物理。",
       "keywords": [
         "strongly correlated systems",
         "strongly correlated electrons",
@@ -80,7 +80,12 @@
         "magnetoelectric coupling",
         "ferroelectricity",
         "ferromagnetism",
-        "spin-lattice coupling"
+        "spin-lattice coupling",
+        "交变磁性",
+        "altermagnetism",
+        "altermagnetic",
+        "altermagnet",
+        "altermagnetic materials"
       ],
       "arxivCategories": [
         "cond-mat.str-el",
@@ -151,7 +156,12 @@
           "magnetoelectric coupling",
           "ferroelectricity",
           "ferromagnetism",
-          "spin-lattice coupling"
+          "spin-lattice coupling",
+          "交变磁性",
+          "altermagnetism",
+          "altermagnetic",
+          "altermagnet",
+          "altermagnetic materials"
         ],
         "arxivCategories": [
           "cond-mat.str-el",
@@ -160,10 +170,39 @@
           "cond-mat.mes-hall"
         ]
       }
-    ]
+    ],
+    "archiveDays": 60,
+    "topJournalFeed": {
+      "enabled": true,
+      "daysBack": 365,
+      "maxPapers": 12,
+      "rowsPerPhrase": 8,
+      "archiveMonths": 12,
+      "journals": [
+        "Nature",
+        "Science",
+        "Physical Review Letters",
+        "Nature Physics",
+        "Nature Materials",
+        "Nature Nanotechnology",
+        "Nature Chemistry",
+        "Nature Computational Science",
+        "Nature Communications",
+        "Science Advances",
+        "Proceedings of the National Academy of Sciences",
+        "PNAS"
+      ],
+      "searchPhrases": [
+        "machine learning molecular dynamics interatomic potential thermodynamic",
+        "DeepMD MACE machine learning potential",
+        "strongly correlated electrons Mott Hubbard quantum spin liquid",
+        "multiferroic ferroelectric magnetoelectric altermagnetism altermagnetic"
+      ],
+      "queryText": "machine learning molecular dynamics interatomic potential thermodynamic DeepMD MACE strongly correlated electrons Mott Hubbard quantum spin liquid multiferroic ferroelectric magnetoelectric altermagnetism altermagnetic"
+    }
   },
   "position": "材料助理研究员",
-  "education": "上海大学博士",
+  "education": "上海大学理学博士",
   "currentFocus": [
     "我正在关注机器学习势函数和分子动力学模拟在热力学性质、相变、自由能与热输运计算中的可靠性和可迁移性。",
     "我也关注凝聚态强关联体系和多铁材料中电子关联、磁电耦合与自旋-晶格耦合对宏观物性的影响。"
