@@ -1,6 +1,6 @@
 # Latest papers for 程旭丽
 
-Updated: 2026-08-03T12:41:43.092576+00:00
+Updated: 2026-08-04T10:22:12.946217+00:00
 Window: last 14 days
 
 ## 机器学习分子动力学模拟与热力学性质
@@ -12,8 +12,8 @@ Window: last 14 days
 - Venue: cond-mat.mtrl-sci, physics.comp-ph
 - Authors: Iyyappa Rajan Panneerselvam, Mark Yeung, Charlotte Palmer, Brendan Dromey, Lorenzo Stella
 - Link: https://arxiv.org/abs/2607.28838v1
-- Score: 15.0
-- Match: 标题匹配 neural network potential; 最近 3 天发布
+- Score: 14.0
+- Match: 标题匹配 neural network potential; 近两周发布
 
 **中文摘要：** 我们提出了一种多尺度机器学习第一原理方法来研究电子激发 $α$-SiO$_2$ 中的超快晶格动力学。基于电子温度依赖性密度泛函理论 (DFT) 的从头算分子动力学 (AIMD) 用于训练电子温度依赖性深度神经网络势 (DNNP)。使用 DNNP 可以对具有数千个原子的大型 $α$-SiO$_2$ 单元进行接近 DFT 精度的原子建模。 特别是，DNNP 使我们能够获得由电子温度突然升高激发的 $α$-SiO$_2$ 的精确声子能带结构和分子动力学 (MD)。随着电子温度 $T_e$ 的增加，发现 $α$-SiO$_2$ 出现明显的晶格失稳，表现为违反弹性稳定性标准、体积大幅膨胀、体积模量急剧下降以及由于反键态占据而导致 Si-O 键逐渐减弱。 根据电子和声子能带结构，我们估计了 Frohlich 耦合常数，该常数随着 $T_e$ 的增加而减小，表明在电子温度升高时会交叉到 $α$-SiO$_2$ 的非极性相。 Bader 电荷分析证实了这一点。我们还建议，在 $T_e > 2$ eV 时应强烈抑制极性光学声子散射。从大单元 DNNP-MD 模拟中，我们表明，在最初的几百飞秒内，并未实现由麦克斯韦-玻尔兹曼分布定义的明确热平衡。 这种行为解释了 $T_e$ 突然上升后动力学温度的非单调平衡。当 $T_e$ 升至 2.6 eV 后，Si 和 O 原子首先在两个不同的温度下分别达到平衡，表明存在原子流体相，这与最近的实验和理论发现一致。
 **讨论重点：** 我们提出了一种多尺度机器学习第一原理方法来研究电子激发 $α$-SiO$_2$ 中的超快晶格动力学。基于电子温度依赖性密度泛函理论 (DFT) 的从头算分子动力学 (AIMD) 用于训练电子温度依赖性深度神经网络势 (DNNP)。 结合关键词看，阅读时应重点关注神经网络势相关的模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性。
@@ -37,12 +37,12 @@ Window: last 14 days
 - Date: 2026-07-28T17:28:41Z
 - Venue: cond-mat.mtrl-sci
 - Authors: Jared C. Stimac, Fei Zhou, Kyle Bushick, Bo Lei, Sebastien Hamel, Amit Samanta
-- Link: https://arxiv.org/abs/2607.26018v1
-- Score: 13.0
+- Link: https://arxiv.org/abs/2607.26018v2
+- Score: 12.0
 - Match: 标题匹配 machine learning interatomic potential; 近两周发布
 
-**中文摘要：** 为了通过原子模拟（例如分子动力学（MD））适当捕获大规模材料特征和突发现象，系统规模可以达到数亿个原子。然而，驱动这些模拟的力场模型通常使用密度泛函理论 (DFT) 参考数据进行训练，仅限于数百或数千个原子数量级的相对较小的配置。 为了计算感兴趣区域中原子上的 DFT 力，例如用于原子间势的主动学习或动态训练，需要从较大的模拟框中提取一小组原子，并且需要使用 DFT 的周期性边界条件进行典型工作；然而，尚未系统地分析选择这组提取的原子的形状和大小以及生成潜在必要的钝化包络的方法。 在这项工作中，我们提出了各种技术的基准，用于从大型体配置中提取原子环境，并将其嵌入到适合具有周期性边界条件的 DFT 计算的较小配置中。我们使用多种材料系统进行测试，其中包括无定形 $\mathrm{SiO_2}$、具有螺旋位错的 Ta 和熔融 C。我们演示了一种非常简单的程序（我们称为删除的方法），其性能优于一系列替代提取方法。
-**讨论重点：** 在这项工作中，我们提出了各种技术的基准，用于从大型体配置中提取原子环境，并将其嵌入到适合具有周期性边界条件的 DFT 计算的较小配置中。我们演示了一个非常简单的过程，我们称之为删除的方法，与一系列替代提取方法相比具有优越的性能。 结合关键词看，阅读时应重点关注机器学习原子间势相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
+**中文摘要：** 为了通过原子模拟（例如分子动力学（MD））适当捕获大规模材料特征和突发现象，系统规模可以达到数亿个原子。然而，驱动这些模拟的力场模型通常使用密度泛函理论 (DFT) 参考数据进行训练，仅限于数百或数千个原子数量级的相对较小的配置。 为了计算感兴趣区域中原子上的 DFT 力，例如用于原子间势的主动学习或动态训练，需要从较大的模拟框中提取一小组原子，并且通常使用 DFT 的周期性边界条件。然而，尚未系统地分析选择这组提取的原子的形状和大小以及生成潜在必要的钝化包络的方法。 在这项工作中，我们对多种技术进行了基准测试，包括基于生成扩散的人工智能 (AI) 方法，用于从大型体配置中提取原子环境，并将其嵌入到适合具有周期性边界条件的 DFT 计算的较小配置中。我们使用多种材料系统进行测试，其中包括无定形 $\mathrm{SiO_2}$、具有螺旋位错的 Ta 和熔融 C。我们演示了一种非常简单的程序（我们称为删除的方法），其性能优于一系列替代提取方法。
+**讨论重点：** 在这项工作中，我们对多种技术进行了基准测试，包括基于生成扩散的人工智能 (AI) 方法，用于从大型体配置中提取原子环境，并将其嵌入到适合具有周期性边界条件的 DFT 计算的较小配置中。然而，驱动这些模拟的力场模型通常使用密度泛函理论 (DFT) 参考数据进行训练，仅限于数百或数千个原子数量级的相对较小的配置。 结合关键词看，阅读时应重点关注机器学习原子间势相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
 
 ### 4. Charge-Density-Wave Phase Transitions in Monolayer 1T-TaS2 from Universal Machine Learning Molecular Dynamics
 
@@ -51,7 +51,7 @@ Window: last 14 days
 - Venue: cond-mat.mtrl-sci
 - Authors: Valentina Nesterova, Tribhuwan Pandey, Tom Berlijn, Fariborz Kargar, Lucas Lindsay, Konstantin Klyukin
 - Link: https://arxiv.org/abs/2607.22316v1
-- Score: 9.0
+- Score: 8.0
 - Match: 标题匹配 machine learning molecular dynamics; 近两周发布
 
 **中文摘要：** 1T 过渡金属二硫属化物中的电荷密度波 (CDW) 相是由强电子声子耦合和伴随的晶格不稳定性产生的。由于需要大型超级电池和广泛的有限温度采样，使用传统的第一原理分子动力学 (MD) 捕获其随温度变化的结构演化仍然具有挑战性。 在这里，我们结合密度泛函理论 (DFT)、通用机器学习原子间势 (MLIP)、MD 和温度相关的有效势声子计算来研究单层 1T-TaS2 中 CDW 跃迁的结构和振动特征。针对 DFT 位移能量的基准测试确定了 UMA-s-1p1 通用机器学习潜力，具有足够的精度用于后续的有限温度模拟。 我们的结果表明，大规模 MD 模拟再现了实验观察到的从低温大卫之星 (SoD) 扭曲结构到高温原始六边形结构的相变序列，通过归因于 SoD 的 Ta 原子数量来量化。加热-冷却循环表现出热滞后，并且在冷却时，系统冻结成多域状态，其中α和\b{eta} CDW手性独立成核并持续到最低温度。 这些发现表明，经过仔细基准测试的通用 MLIP 可以为 CDW 材料的有限温度研究提供可扩展的框架。
@@ -137,18 +137,18 @@ Window: last 14 days
 
 ## 凝聚态物理强关联体系和多铁性质
 
-### 1. Altermagnetism from a Cu-Fe Lieb Lattice in FeSe/Cuprate Heterostructures
+### 1. Magnetically tunable symmetry-enforced nodal lines producing huge anomalous Hall conductivity in altermagnetic $α$-MnTe
 
 - Source: arXiv
-- Date: 2026-07-29T18:00:04Z
-- Venue: cond-mat.str-el, cond-mat.supr-con
-- Authors: Ying Li, Augustin Davignon, Peng Rao, Runhan Li, Maia G. Vergniory, Roser Valentí
-- Link: https://arxiv.org/abs/2607.27331v1
-- Score: 27.0
-- Match: 摘要匹配 unconventional superconductivity; 标题匹配 altermagnetism; 摘要匹配 altermagnetic; 标题匹配 altermagnet
+- Date: 2026-08-03T15:55:42Z
+- Venue: cond-mat.mtrl-sci, cond-mat.other
+- Authors: Mathews Benny, Xujia Gong, Amar Fakhredine, Raphaël Salazar, Ashutosh S. Wadge, Juraj Krempaský
+- Link: https://arxiv.org/abs/2608.02416v1
+- Score: 28.0
+- Match: 摘要匹配 ferromagnetism; 标题匹配 altermagnetic; 标题匹配 altermagnet; 最近 3 天发布
 
-**中文摘要：** 在基于铜酸盐的高$T_c$系统中实现交变磁性将为在没有净磁化强度的情况下研究自旋分裂电子​​带并研究它们与非常规超导性的相互作用提供直接途径。在这里，我们提出 FeSe/铜酸盐异质结构提供了这样一个平台，其中 Cu 和 Fe 层的 45$^\circ$ 扭曲创建了一个有效的 CuFe$_2$ Lieb 晶格，其中 Fe 磁序和通过配体的 Cu-Fe 杂化诱导了交磁 $d$ 波自旋分裂。最小紧束缚模型表明该机制是通用的。 此外，FeSe 中两个 Se 位点的基质引起的不等价性提供了第二条途径，其中交变磁性起源于 Fe 层，并通过邻近转移到铜酸盐层。 FeSe/Bi$_2$Sr$_2$CuO$_6$ 异质结构的密度泛函理论计算证实了两种机制的可行性，并揭示了增强自旋分裂的方法。这些结果确立了超导铜酸盐/过渡金属硫属化物异质结构作为工程交流磁学和研究其与非常规超导耦合的有前途的环境。
-**讨论重点：** 在这里，我们提出 FeSe/铜酸盐异质结构提供了这样一个平台，其中 Cu 和 Fe 层的 45$^\circ$ 扭曲创建了一个有效的 CuFe$_2$ Lieb 晶格，其中 Fe 磁序和通过配体的 Cu-Fe 杂化诱导了交磁 $d$ 波自旋分裂。在基于铜酸盐的高$T_c$系统中实现交变磁性将为在没有净磁化强度的情况下研究自旋分裂电子​​带并研究它们与非常规超导性的相互作用提供直接途径。 结合关键词看，阅读时应重点关注非常规超导、交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
+**中文摘要：** 交变磁 $α$-MnTe 在室温下表现出巨大的反常霍尔电导率 (AHC)，以及自旋和轨道极化产生的弱铁磁性。我们通过识别价带中具有 Mn 特征的两组不同的对称强制节点线来澄清 AHC 大值的起源，这些节点线位于 $k_z=0$ 和 $k_z=\fracπ{c}$ 处，分别受到镜像对称 $M_z$ 和滑移对称 $G_z = \{M_z\,|\,0,0,\tfrac{c}{2}\}$ 的保护。 两条节点线均与能量相关，具有近似 C$_6$ 对称性，由于 Néel 矢量的存在，该对称性被简化为精确的 C$_2$ 对称性。最高价带表现出墨西哥帽色散，而第二高价带表现出倒置墨西哥帽色散，在两个能带之间的交叉处具有节点线。在第一原理精度范围内，我们证明这些节点线会产生实验观察到的大 AHC，并表现出与弱铁磁性的强烈相互作用。 我们进一步表明，即使是很小的自旋倾斜也会强烈改变节点线和 AHC，使它们都具有磁性可调。通过解开 AHC 中的交磁和铁磁贡献，交磁贡献在小倾斜角度下占主导地位，而铁磁贡献在较大的角度下变得相当大。利用角度分辨光电子光谱中的线性二色性，我们显示了布里渊区边界处的节点线的特征。
+**讨论重点：** 交变磁 $α$-MnTe 在室温下表现出巨大的反常霍尔电导率 (AHC)，以及自旋和轨道极化产生的弱铁磁性。我们通过识别价带中具有 Mn 特征的两组不同的对称强制节点线来澄清 AHC 大值的起源，这些节点线位于 $k_z=0$ 和 $k_z=\fracπ{c}$ 处，分别受到镜像对称 $M_z$ 和滑移对称 $G_z = \{M_z\,|\,0,0,\tfrac{c}{2}\}$ 的保护。 结合关键词看，阅读时应重点关注铁磁性、交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
 
 ### 2. Study of the Anomalous Hall effect by tuning the spin orientation in the Altermagnetic material CrSb
 
@@ -157,112 +157,112 @@ Window: last 14 days
 - Venue: cond-mat.str-el, cond-mat.mtrl-sci
 - Authors: Sreedevi Chintalapudi, Upasana Agrawal, Suvadip Das
 - Link: https://arxiv.org/abs/2607.29646v1
-- Score: 26.0
+- Score: 25.0
 - Match: 摘要匹配 altermagnetism; 标题匹配 altermagnetic; 标题匹配 altermagnet; 最近 3 天发布
 
 **中文摘要：** 交变磁性领域的最新发展以及对反常霍尔效应应用的需求不断增加，开创了材料中新型量子相的新时代。以前预计可以科学预测的量子材料已经展现出新颖的特性，使它们成为人们关注的焦点。这些表现使我们根据物质的拓扑非平凡相重新思考对磁性材料现有分类的理解以及关于反常霍尔效应的现有概念。 最近的一项进展在于具有量子计算前景的新型变磁材料。在本文中，我们描述了自旋和轨道分辨电子谱、模式分解声子色散关系、几何浆果曲率和拓扑表面态及其对有前景的互磁化合物 CrSb 中反常霍尔电导率的影响。 我们进一步利用第一性原理计算，结合交流磁体众多磁性配置的计算效率最大局部万尼尔态来模拟外部场的影响，并阐明反常霍尔电导率与磁化强度的线性行为并不一定适用于所有磁性类别（例如交流磁体）。
 **讨论重点：** 交变磁性领域的最新发展以及对反常霍尔效应应用的需求不断增加，开创了材料中新型量子相的新时代。以前预计可以科学预测的量子材料已经展现出新颖的特性，使它们成为人们关注的焦点。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
 
-### 3. Coupled Spin-Density-Wave and Bond-Order Driven Metal-Insulator Transition in Altermagnetic CsCr$_2$S$_2$O
+### 3. Twist-induced magnetic topological phase transition in stacked altermagnetic CrO
 
 - Source: arXiv
-- Date: 2026-07-30T14:58:50Z
-- Venue: cond-mat.str-el
-- Authors: Chenchao Xu, Wansheng Bai, Guo-Xiang Zhi, Yi Liu, Xiaoqun Wang, Jianhui Dai
-- Link: https://arxiv.org/abs/2607.28329v1
-- Score: 25.0
-- Match: 摘要匹配 altermagnetism; 标题匹配 altermagnetic; 标题匹配 altermagnet; 最近 3 天发布
-
-**中文摘要：** 在 CsCr$_2$S$_2$O 中发现了由键序 (BO) 与次级自旋密度波 (SDW) 耦合驱动的金属-绝缘体转变 (MIT)。这种耦合是由于预先存在的 C 型反铁磁 (C-AFM) 阶次而导致时间反转对称性被破坏而实现的。第一性原理计算揭示了轨道选择物理现象，即 Cr-$d_{yz}$ 轨道形成局部矩并建立交变磁序，而 Cr-$d_{xz}$ 轨道保持金属性并与 S-$p_z$ 杂化。因此，低能物理由 Cr-$d_{xz}$ 和 S-$p_z$ 轨道控制。 然后，现场相互作用增强了流动 $d_{xz}$ 电子的次级 SDW ($s$SDW) 不稳定性，该电子与 Cr-$d_{xz}$-S-$p_z$ 键序耦合。由此产生的耦合 $s$SDW-BO 同时产生实验观察到的结构变形、电荷歧化、局部 Cr 矩调制和间隙打开。我们的研究结果建立了一种轨道选择机制，在该机制上预先存在的交变磁力和电子相关性合作驱动结构性 MIT。
-**讨论重点：** 在 CsCr$_2$S$_2$O 中发现了由键序 (BO) 与次级自旋密度波 (SDW) 耦合驱动的金属-绝缘体转变 (MIT)。这种耦合是由于预先存在的 C 型反铁磁 (C-AFM) 阶次而导致时间反转对称性被破坏而实现的。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
-
-### 4. A Universal Crystal-Field Design Principle for Orbital-Order-Driven Altermagnetism
-
-- Source: arXiv
-- Date: 2026-07-30T05:26:18Z
+- Date: 2026-08-02T13:42:16Z
 - Venue: cond-mat.mtrl-sci
-- Authors: Shantanu Pathak, Saswata Bhattacharya
-- Link: https://arxiv.org/abs/2607.27693v1
+- Authors: Zi-Hao Ding, Ze-Feng Gao, Xiang-Hua Kong, Peng-Jie Guo, Zhong-Yi Lu
+- Link: https://arxiv.org/abs/2608.01235v1
 - Score: 24.0
-- Match: 标题匹配 altermagnetism; 摘要匹配 altermagnetic; 标题匹配 altermagnet; 近两周发布
-
-**中文摘要：** 交变磁体将共线反铁磁序与非相对论自旋分裂相结合，无需依赖自旋轨道耦合即可实现自旋电子功能。虽然交错轨道排序最近已成为交流磁学的替代途径，但其普遍性仍未得到探索。在这里，我们建立了轨道序驱动交变磁力的通用晶体场设计原理。 我们表明，结构弛豫一致地重建了晶体场景观，激活了一个共同的 $d_{xz}/d_{yz}$ 轨道流形，该轨道流形驱动自发交错轨道排序和跨越电子填充从 $d^1$ 到 $d^7$ 的过渡金属化合物的鲁棒 $d$ 波非相对论自旋分裂。通过引入基于层相关磁和轨道序参数的统一对称框架，我们演示了层间堆叠如何决定系统是否实现体交变磁态或全局补偿的反交变磁相。 此外，我们发现这种对称保护的自旋分裂纹理会产生高度各向异性的自旋极化电导率。我们的结果将晶体场工程确立为发现和工程轨道序驱动交替磁体的预测设计策略。
-**讨论重点：** 在这里，我们建立了轨道序驱动交变磁力的通用晶体场设计原理。通过引入基于层相关磁和轨道序参数的统一对称框架，我们演示了层间堆叠如何决定系统是否实现体交变磁态或全局补偿的反交变磁相。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
-
-### 5. Transport Evidence of Magnetic Polarization in the Altermagnetic Candidate MnTe
-
-- Source: arXiv
-- Date: 2026-07-30T16:14:10Z
-- Venue: cond-mat.mtrl-sci, cond-mat.mes-hall
-- Authors: Younes Ghorbani, Nayana Devaraj, Joshua Maile, Samuel Poage, Qihua Zhang, Maria Hilse
-- Link: https://arxiv.org/abs/2607.28441v1
-- Score: 22.0
 - Match: 标题匹配 altermagnetic; 标题匹配 altermagnet; 最近 3 天发布
 
-**中文摘要：** 精确控制磁特性的能力是未来自旋电子学发展的核心。在这项工作中，我们报告了使用分子束外延在 InP(111) 衬底上成功生长外延 α-MnTe 薄膜。低温下的磁输运测量揭示了明显的迟滞蝶形纵向磁阻以及非线性横向磁阻响应，表明薄膜中存在有限的净磁极化。 为了了解这种行为的起源，进行了密度泛函理论 (DFT) 计算。虽然原始块体 MnTe 是一种补偿反铁磁体，但我们的计算结果表明，薄膜几何形状中可以通过多种途径出现有限磁化，包括界面引起的对称性破缺和点缺陷。这些发现证明了在薄膜中设计磁响应的外延途径。
-**讨论重点：** 精确控制磁特性的能力是未来自旋电子学发展的核心。在这项工作中，我们报告了使用分子束外延在 InP(111) 衬底上成功生长外延 α-MnTe 薄膜。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
+**中文摘要：** 层间扭曲提供了控制电子状态的几何途径，但它是否可以同时重建磁对称性和能带拓扑仍不清楚。在这里，基于对称性分析和第一性原理计算，我们表明相应的扭曲驱动堆叠双层 CrO 中的磁拓扑相变。特别是，它将反铁磁狄拉克半金属转变为 $d$ 波交磁双极化韦尔半金属或非常规补偿磁性韦尔半金属。 一个关键结果是 $d$ 波交磁相中的 Weyl 点位于布里渊区中的通用 $k$ 点，并受到自旋对称性 $\left\{ C_2 T||C_{2z} T\right\}$ 的保护。这与传统的二维韦尔半金属形成鲜明对比，在传统的二维韦尔半金属中，韦尔点通常受到镜像或旋转对称性的保护，因此固定在高对称线上。我们进一步证明，相应的扭曲保留了自旋对称性$\left\{ C_2 T||C_{2z} T\right\}$，使得Weyl相成为扭曲的鲁棒结果，而不是特定角度的微调特征。 我们的工作建立了一种基于对称的途径来设计扭曲二维材料中的磁拓扑相。
+**讨论重点：** 层间扭曲提供了控制电子状态的几何途径，但它是否可以同时重建磁对称性和能带拓扑仍不清楚。在这里，基于对称性分析和第一性原理计算，我们表明相应的扭曲驱动堆叠双层 CrO 中的磁拓扑相变。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
 
-### 6. Orbital-Selective Mott Transition and Correlation-Amplified Charge Ordering in the Altermagnet CsCr$_2$S$_2$O
-
-- Source: arXiv
-- Date: 2026-07-30T11:14:59Z
-- Venue: cond-mat.str-el, cond-mat.mtrl-sci
-- Authors: Xiuhua Chen, Yilin Wang
-- Link: https://arxiv.org/abs/2607.28029v1
-- Score: 20.0
-- Match: 摘要匹配 altermagnetism; 摘要匹配 altermagnetic; 标题匹配 altermagnet; 近两周发布
-
-**中文摘要：** Altermagnet CsCr$_2$S$_2$O 经历由晶格畸变和 Cr 子晶格上的条带电荷顺序驱动的 Verwey 型金属到绝缘体转变 (MIT)，让人想起 Fe$_3$O$_4$ 中的物理现象。然而，原子畸变仅发生在配体位点而不是 Cr 位点。因此，是什么导致了 Cr 位点之间如此明显的电荷不平衡仍然是一个谜。利用 DFT+DMFT 计算，我们确定了轨道选择性莫特跃迁，这使得相关金属 $d_{yz}$ 轨道控制着低能物理。 我们证明，S 位点畸变通过 Cr-$d_{yz}$ 和 S-$p$ 轨道杂化触发 Cr 位点之间初始的微小电荷不对称性。至关重要的是，这种不对称性被动态电子相关性显着放大，导致不同 Cr 位点之间 Cr-$d_{yz}$ 轨道的电荷和电子相关性存在巨大差异。这进一步引起了交变磁态下局部自旋极化的显着差异，最终推动了 MIT 的发展。 相反，我们预测用 Te 代替 S 会削弱这种相关放大效应，并且由于电子相关性较弱而无法诱导 MIT。我们的研究结果表明，多体效应可以极大地放大配体不稳定性，从而重塑交变磁体的电子结构，这凸显了配体工程对于实现稳健的金属交变磁性至关重要。
-**讨论重点：** Altermagnet CsCr$_2$S$_2$O 经历由晶格畸变和 Cr 子晶格上的条带电荷顺序驱动的 Verwey 型金属到绝缘体转变 (MIT)，让人想起 Fe$_3$O$_4$ 中的物理现象。然而，原子畸变仅发生在配体位点而不是 Cr 位点。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
-
-### 7. Thermal spin transport in easy-planar $d$-wave altermagnets controlled by magnetic field
+### 4. Band topology and symmetry-driven magneto-optical response in two-dimensional d-wave altermagnets with staggered spin-orbit coupling
 
 - Source: arXiv
-- Date: 2026-07-30T11:53:34Z
-- Venue: cond-mat.str-el
-- Authors: Yuliia I. Gusieva, Kostiantyn V. Yershov, Jeroen van den Brink, Volodymyr P. Kravchuk
-- Link: https://arxiv.org/abs/2607.28085v1
+- Date: 2026-08-03T12:36:30Z
+- Venue: cond-mat.mes-hall, cond-mat.mtrl-sci
+- Authors: Meysam Bagheri Tagani Carmine Autieri, Wojciech Brzezicki
+- Link: https://arxiv.org/abs/2608.02155v1
+- Score: 21.0
+- Match: 摘要匹配 altermagnetic; 标题匹配 altermagnet; 最近 3 天发布
+
+**中文摘要：** 交变磁体将补偿共线磁序与动量相关的自旋分裂相结合，提供了一种在没有净铁磁矩的情况下横向电子和光学响应的​​途径。我们为二维 d 波交替磁体开发了严格周期性的四能带紧束缚模型，并区分了三个自旋轨道耦合 (SOC) 通道的作用：均匀 Rashba SOC、亚晶格交错 Rashba 相互作用和键交错 SOC。 在没有 SOC 的情况下，d 波动力学各向异性在正交布里渊区边界上产生自旋极化狄拉克点，与交磁四重自旋群对称性相关。均匀 Rashba SOC 混合自旋扇区并移动这些节点，但保留了禁止集成霍尔响应的反酉对称性。亚晶格交错的 Rashba 项打破了这种对称性并激活横向光学响应，而键交错的 SOC 提供了使边界节点间隙的质量。 它们的组合作用会产生强烈的贝里曲率热点，并在狭窄的参数窗口内产生陈数 C=-2 的孤立的下两带流形。对于这里考虑的代表性参数，可以稳定陈绝缘体相。使用协变速度 Kubo 计算，我们表明大光学霍尔电导率和圆二色性远远超出非零陈区域，并受到 SOC 引起的避免交叉和对称性破缺的控制。 我们进一步发现，载流子掺杂通过泡利阻塞和贝里曲率热点的占据强烈改变了谐振和直流霍尔响应，从而实现了栅极控制的符号反转。这些结果确定了不同界面 SOC 机制在补偿二维磁体中产生拓扑和可调谐磁光活动方面的互补作用。
+**讨论重点：** 我们为二维 d 波交替磁体开发了严格周期性的四能带紧束缚模型，并区分了三个自旋轨道耦合 (SOC) 通道的作用：均匀 Rashba SOC、亚晶格交错 Rashba 相互作用和键交错 SOC。在没有 SOC 的情况下，d 波动力学各向异性在正交布里渊区边界上产生自旋极化狄拉克点，与交磁四重自旋群对称性相关。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
+
+### 5. Transient Ferromagnetism in Ultrafast Phase Transitions in Perovskites under XUV Irradiation: A Comparative Study of SrTiO3 and KTaO3
+
+- Source: arXiv
+- Date: 2026-08-03T12:06:28Z
+- Venue: cond-mat.mtrl-sci
+- Authors: Aldo Artimez Pena, Nikita Medvedev
+- Link: https://arxiv.org/abs/2608.02106v1
+- Score: 18.0
+- Match: 标题匹配 ferromagnetism; 最近 3 天发布
+
+**中文摘要：** 我们使用 XTANT3 多尺度代码研究钛酸锶和钽酸钾对强飞秒辐照的超快结构和电子响应。研究发现，在 STO 中的阈值剂量为 0.7 eVatom 和 KTO 中的阈值剂量为 0.9 eVatom 时，超离子态会随着氧子系统的选择性熔化而热形成，同时金属亚晶格仍保持有序。这种状态持续到 1.6 eVatom STO 和 1.5 eVatom KTO，超过此值就会发生完全紊乱。 对瞬态电子密度的分析表明，B位d轨道控制着两种材料的发散行为：STO中紧凑的Ti 3d轨道产生窄导带和大原子内交换参数，在1 ps时间尺度上驱动瞬态铁磁不稳定性，而KTO中更空间扩展的Ta 5d轨道产生更宽的导带和更小的交换参数，保持KTO顺磁性。 这些结果表明d轨道空间范围作为影响相变序列和极端电子激发下磁响应的结构参数，对基于钙钛矿的光电器件中电子和磁特性的超快光学控制具有影响。 Landau Devonshire 分析表明，0.3 eVatom 的辐照瞬时加深了无应变和应变 STO 和 KTO 中的极性势阱，相对于无应变情况，在应变 STO 中该效应放大了约 2 倍，在应变 KTO 中放大了 6 倍。
+**讨论重点：** 我们使用 XTANT3 多尺度代码研究钛酸锶和钽酸钾对强飞秒辐照的超快结构和电子响应。研究发现，在 STO 中的阈值剂量为 0.7 eVatom 和 KTO 中的阈值剂量为 0.9 eVatom 时，超离子态会随着氧子系统的选择性熔化而热形成，同时金属亚晶格仍保持有序。 结合关键词看，阅读时应重点关注铁磁性相关的研究对象、方法假设、关键参数、数据来源，以及结果能否迁移到相邻材料或物理体系。
+
+### 6. Second-Harmonic Imaging of Magnetic Domains in Thin Film Hematite
+
+- Source: arXiv
+- Date: 2026-08-03T14:07:20Z
+- Venue: cond-mat.mtrl-sci
+- Authors: Holger Mirkes, Johannes Schmuck, Katharina Müller, János Papp, Paul Seifert, Matthias Althammer
+- Link: https://arxiv.org/abs/2608.02263v1
 - Score: 17.0
-- Match: 摘要匹配 altermagnetic; 标题匹配 altermagnet; 近两周发布
+- Match: 摘要匹配 altermagnetic; 摘要匹配 altermagnet; 最近 3 天发布
 
-**中文摘要：** 交变磁体构成了一类新型共线自旋补偿材料，其中磁振子分支即使在非相对论极限下也是自旋分裂的。后者是连接两个子晶格的更复杂的对称运算（与传统反铁磁体相比）的结果。交变磁分裂强烈影响磁振子输运特性，特别是导致易轴向 $d$ 波交变磁体中的热磁振子分裂效应。 这种效应是否也出现在易平面系统中尚不明显，因为在这种情况下磁振子分支不携带恒定磁矩。在这里，我们考虑金红石型的简单平面 $d$ 波交变磁体，例如 NiF$_2$，并证明交变磁体产生的磁振子磁矩的出现，该磁矩与动量相关并具有 $d$ 波对称性。这然后导致自旋分裂效应，即响应于所施加的温度梯度而出现磁振子驱动的自旋流（磁矩流）。 我们还证明，可以通过垂直于易平面的外部磁场有效地调节相应的热自旋电导率。
-**讨论重点：** 交变磁体构成了一类新型共线自旋补偿材料，其中磁振子分支即使在非相对论极限下也是自旋分裂的。后者是连接两个子晶格的更复杂的对称运算（与传统反铁磁体相比）的结果。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
+**中文摘要：** 赤铁矿是一种反铁磁氧化物和候选交磁绝缘体，其尼尔阶在莫林转变处从易轴重新定向到易平面相。解释交磁输运和对称敏感光学响应需要了解相对于晶轴的尼尔矢量方向以及被探测器件内的磁畴结构。在这里，我们展示了偏振分辨二次谐波发生（SHG）显微镜可以解析外延（0001）取向赤铁矿薄膜中的磁对称性和磁畴。 在整个莫林温度范围内，SHG 偏振各向异性从与易轴方向一致的大约六重模式演变为与易平面方向一致的明显双重模式。基于磁偶极子和电四极子贡献的对称性分析再现了这种演变。重要的是，在磁序反转的情况下，奇数和偶数倍频振幅之间的干涉使得相反的尼尔矢量方向在光学上可区分。 一致地，在我们的实验中，所施加的面内磁场的相反方向会产生不同的倍频响应。利用这种磁性对比，我们对微米级磁域、它们在莫林转变期间的重组以及它们在磁和热循环下的重新配置进行成像，包括通过自旋翻转转变循环后的剩余变化。这些结果确立了倍频显微镜作为赤铁矿薄膜中磁对称性、尼尔矢量取向和磁畴演化的局部探针。
+**讨论重点：** 赤铁矿是一种反铁磁氧化物和候选交磁绝缘体，其尼尔阶在莫林转变处从易轴重新定向到易平面相。解释交磁输运和对称敏感光学响应需要了解相对于晶轴的尼尔矢量方向以及被探测器件内的磁畴结构。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
 
-### 8. Domain-Selective Enhancement of Second Harmonic Generation in Monolayer MoS$_2$ via Ferroelectricity-Controlled Photodoping
+### 7. Emergent modular Luttinger liquid from spin-partitioned entanglement in the one-dimensional Hubbard model
 
 - Source: arXiv
-- Date: 2026-07-31T08:34:46Z
-- Venue: cond-mat.mtrl-sci, cond-mat.mes-hall, physics.optics
-- Authors: David Hernández-Pinilla, Line Jelver, María Jesús Martínez-Morillo, César Hernando-Fuente, Miquel Cherta, Guillermo López-Polin
-- Link: https://arxiv.org/abs/2607.29152v1
+- Date: 2026-08-03T07:26:51Z
+- Venue: cond-mat.str-el, cond-mat.quant-gas
+- Authors: Ádám Bácsi, Catalin Pascu Moca, Balázs Dóra
+- Link: https://arxiv.org/abs/2608.01817v1
+- Score: 17.0
+- Match: 标题匹配 Hubbard model; 最近 3 天发布
+
+**中文摘要：** 我们研究一维排斥哈伯德模型的自旋分配纠缠哈密顿量。通过将玻色子化与精确对角化相结合，我们证明追踪一个自旋物种会产生一种模块化的卢廷格液体，其性质与物理系统的性质根本不同。虽然模谱是完全无色散的并且具有与动量无关的纠缠间隙，但其本征态表现出由单个有效卢廷格参数控制的代数相关性，该有效卢廷格参数等于电荷和自旋卢廷格参数的几何平均值。 由此产生的纠缠谱显示出通用的分支层次结构，与精确的对角化非常一致。我们进一步证明，模块化基态与无旋转的卢廷格液体几乎相同。这些结果揭示了相互作用的一维费米子系统中的通用模块化结构。
+**讨论重点：** 我们研究一维排斥哈伯德模型的自旋分配纠缠哈密顿量。通过将玻色子化与精确对角化相结合，我们证明追踪一个自旋物种会产生一种模块化的卢廷格液体，其性质与物理系统的性质根本不同。 结合关键词看，阅读时应重点关注Hubbard 模型相关的有效模型参数、电子关联强度、相图边界以及可与实验对照的谱学或输运信号。
+
+### 8. Electron-like high-temperature superconductivity induced by compressive strain in La2PrNi2O7 thin films
+
+- Source: arXiv
+- Date: 2026-08-02T15:05:34Z
+- Venue: cond-mat.supr-con, cond-mat.mtrl-sci, cond-mat.str-el
+- Authors: Zhiwei Wang, Zhengjie Wang, Huiyu Wang, Mingyi Zhu, Mengzu Shi, Zongyao Huang
+- Link: https://arxiv.org/abs/2608.01295v1
+- Score: 17.0
+- Match: 标题匹配 high-temperature superconductivity; 最近 3 天发布
+
+**中文摘要：** 在外延压缩应变下双层镍酸盐中实现高温超导被广泛解释为模仿高静水压力的影响。为了测试这些机制的等效性，我们研究了从压缩 (-2.14%) 到拉伸 (+0.91%) 的综合应变连续体。至关重要的是，通过臭氧辅助原子层外延，我们在 NdAlO3 基底上生长的 La2PrNi2O7 薄膜中实现了高温超导性，这在该材料系统中引起了最极端的压缩应变。 在极端压缩（-2.14%）下，这些薄膜表现出 60 K 的 Tc_onset、33 K 的零电阻和 20 K 的抗磁响应，磁输运测量证实了准二维超导性质。将我们的相图与报道的数据进行比较，揭示了不同的晶格响应：与加压晶体不同，外延膜中的超导窗口在面外参数 c（或 c/ap 比率）方面显着发散，但在面内参数 ap 方面与本体保持一致。 至关重要的是，虽然两个系统中的超导性都是通过抑制自旋密度波（SDW）而产生的，但霍尔测量揭示了基本的电子二分法：最佳超导薄膜本质上是类电子的（表现出负霍尔系数），与高压块状晶体和非超导拉伸薄膜的类空穴性质（正霍尔系数）形成鲜明对比。 最终，两种调谐策略都有效地调节了潜在的相关景观（超导性的真正驱动力），超越了特定费米表面拓扑的限制。这项工作为探索镍酸盐的多轨道物理建立了宏观平台，为研究高温超导性提供了新的维度。
+**讨论重点：** 在外延压缩应变下双层镍酸盐中实现高温超导被广泛解释为模仿高静水压力的影响。为了测试这些机制的等效性，我们研究了从压缩 (-2.14%) 到拉伸 (+0.91%) 的综合应变连续体。 结合关键词看，阅读时应重点关注高温超导相关的自由能路径、相稳定性、热力学量的不确定性，以及势函数误差如何传递到宏观性质。
+
+### 9. Magnetic circular dichroism of THz modes and selection rules of Raman-active optical phonons in the polar altermagnet candidate \ce{Mn2Mo3O8}
+
+- Source: arXiv
+- Date: 2026-08-02T07:54:50Z
+- Venue: cond-mat.str-el, cond-mat.mtrl-sci
+- Authors: F. Schilberth, K. Vasin, M. Knauft, M. Kondákor, M. Vuckovic, N. Herrmann
+- Link: https://arxiv.org/abs/2608.01062v1
+- Score: 16.0
+- Match: 标题匹配 altermagnet; 最近 3 天发布
+
+**中文摘要：** 我们通过温度相关拉曼散射和磁光太赫兹时域透射光谱研究了共线交替磁体候选 ce{Mn2Mo3O8} 中的磁和振动激发。通过与精确捕获振动本征模式的本征频率的 \textit{ab initio} 计算进行比较，我们识别了所有光学声子，包括 $A_1​​$ 和 $E_2$ 类型的最低拉曼模式，这在之前的拉曼研究中仍然难以捉摸。 此外，我们比较了 ce{Mn2Mo3O8} 的顺磁相和磁有序相中光学活性声子的选择规则，并分析了关于赝角动量守恒的拉曼选择规则。没有证据表明简并顺磁 $E_2$ 光学声子在磁排序时分裂成圆偏振模式的问题可以得到解决，这可能是由于 Mn$^{2+}$ 典型的弱自旋轨道耦合所致。 相比之下，我们在宽太赫兹激发带上观察到强磁圆二色性，以磁有序状态出现。该带可能源自双磁振子激发，仅具有电偶极子活性，并且具有场相关的双组分精细结构。其磁圆二色性在 4~T 的自旋翻转跃迁之上消失。
+**讨论重点：** 通过与精确捕获振动本征模式的本征频率的 \textit{ab initio} 计算进行比较，我们识别了所有光学声子，包括 $A_1​​$ 和 $E_2$ 类型的最低拉曼模式，这在之前的拉曼研究中仍然难以捉摸。此外，我们比较了 ce{Mn2Mo3O8} 的顺磁相和磁有序相中光学活性声子的选择规则，并分析了关于赝角动量守恒的拉曼选择规则。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
+
+### 10. Non-relativistic spin splitting in a triangular metal-excess magnet Fe$_{1+δ}$Sb
+
+- Source: arXiv
+- Date: 2026-08-01T21:14:06Z
+- Venue: cond-mat.mtrl-sci
+- Authors: Chao-Chun Wei, Xiaojuan Ni, Sophia Adams, Jacob Kjeldahl Jensen, Jue Liu, Qiang Zhang
+- Link: https://arxiv.org/abs/2608.00871v1
 - Score: 15.0
-- Match: 标题匹配 ferroelectricity; 最近 3 天发布
+- Match: 摘要匹配 ferromagnetism; 摘要匹配 altermagnet; 最近 3 天发布
 
-**中文摘要：** 将二维半导体与铁电材料相结合的混合异质结构提供了一种在纳米尺度上主动控制光与物质相互作用的通用途径。在这里，我们报告了单层二硫化钼（MoS$_2$）与周期性极化铌酸锂（LiNbO$_3$）集成的二次谐波产生（SHG）的全光学、光诱导域选择性控制。空间分辨倍频成像揭示了单层 MoS$_2$ 非线性光学响应的​​显着调制，该响应受底层基板的铁电畴图案控制。 在相反偏振的域之间观察到强烈的倍频对比度，并且显着依赖于激发波长和入射光功率。 MoS$_2$ 单层中启用或不启用光驱动光电掺杂的铁电域之间的比较可以直接评估载流子密度在非线性光学响应中的作用。 我们发现 MoS$_2$/LiNbO$_3$ 界面处的铁电极化控制的光电掺杂增强了有效的二阶磁化率 $χ^2$，在共振激发条件下产生高达约 70% 的倍频强度增加。从头计算证实，电荷掺杂改变了 MoS$_2$ 的电子能带结构，并强烈影响谐振区域中的 $χ^2$，为实验观察到的调制提供了微观支持。 结果强调了光强度和铁电性的结合作为二维材料中能带结构调制和可重构非线性光学响应的​​强大旋钮，为集成混合平台中的可编程频率转换、智能光调制器和先进非线性光子功能开辟了道路。
-**讨论重点：** 将二维半导体与铁电材料相结合的混合异质结构提供了一种在纳米尺度上主动控制光与物质相互作用的通用途径。在这里，我们报告了单层二硫化钼（MoS$_2$）与周期性极化铌酸锂（LiNbO$_3$）集成的二次谐波产生（SHG）的全光学、光诱导域选择性控制。 结合关键词看，阅读时应重点关注铁电性相关的极化翻转、磁电耦合、自旋-晶格耦合以及多铁序参量之间的相互制约。
-
-### 9. Finite-size effects and interaction-driven crossovers in quarter-filled attractive Hubbard model: Exact diagonalization, DMRG and machine-learning analysis
-
-- Source: arXiv
-- Date: 2026-07-30T09:30:00Z
-- Venue: cond-mat.str-el, cond-mat.supr-con
-- Authors: Md Fahad Equbal, Satoru Hayami
-- Link: https://arxiv.org/abs/2607.27916v1
-- Score: 14.0
-- Match: 标题匹配 Hubbard model; 近两周发布
-
-**中文摘要：** 我们使用精确对角化 (ED)、密度矩阵重正化群 (DMRG) 和基于无监督机器学习的技术研​​究有限宽度圆柱晶格上的四分之一填充有吸引力的哈伯德模型。对基态能量、局部可观测量和相关函数的分析揭示了从弱相关费米子到由紧密束缚单重态对主导的状态的连续相互作用驱动的交叉。 这种交叉源于动能驱动的费米子行程和相互作用驱动的现场对形成之间的竞争，并表现出与热力学极限下的 BCS-BEC 交叉一致的行为。空穴结合能计算为对形成提供了直接的能量证据：两孔结合能在整个吸引力范围内保持负值，而三孔结合仅在足够强的吸引力下出现，并表现出明显的有限尺寸依赖性。 为了获得相关景观的无偏表征，我们将主成分分析（PCA）和均匀流形逼近和投影（UMAP）应用于真实空间相关矩阵。 PCA 揭示了相关方差的系统性重新分布，而 UMAP 则确定了弱配对机制和强配对机制之间的明显分离。 两种基于机器学习的方法都独立地识别从传统可观测值推断出的相同交叉区域，同时提供多体相关性的底层重组的独立于顺序参数的表征。配对结构因子和主要 PCA 方差比的有限尺寸缩放分析表明，随着系统尺寸的增加，这些特征仍然保持稳健。
-**讨论重点：** 我们使用精确对角化 (ED)、密度矩阵重正化群 (DMRG) 和基于无监督机器学习的技术研​​究有限宽度圆柱晶格上的四分之一填充有吸引力的哈伯德模型。对基态能量、局部可观测量和相关函数的分析揭示了从弱相关费米子到由紧密束缚单重态对主导的状态的连续相互作用驱动的交叉。 结合关键词看，阅读时应重点关注Hubbard 模型相关的有效模型参数、电子关联强度、相图边界以及可与实验对照的谱学或输运信号。
-
-### 10. Optimization of magneto-electric properties in Lead-free (x)Co1.2Ti0.2Fe1.6O4 - (100-x)BaTiO3 based composites
-
-- Source: arXiv
-- Date: 2026-07-30T05:54:11Z
-- Venue: cond-mat.mtrl-sci, cond-mat.str-el
-- Authors: Rajeev Dwivedi, Samanway Mohanta, Ashutosh Anand, Abhinash Tripathy, Najnin Bano, Dharmendra Kumar
-- Link: https://arxiv.org/abs/2607.27717v1
-- Score: 13.0
-- Match: 摘要匹配 multiferroic; 摘要匹配 magnetoelectric coupling; 近两周发布
-
-**中文摘要：** 本工作系统研究了通过固相反应方法合成的 (x)Co1.2Ti0.2Fe1.6O4 - (100-x)BaTiO3 (x = 10, 20, 30) 无铅多铁性复合材料，研究成分和烧结温度对其结构、电学、磁学和磁电 (ME) 性能的影响。 X 射线衍射和 Rietveld 精修证实了四方 BaTiO3 (BTO) 和立方尖晶石 Co1.2Ti0.2Fe1.6O4 (CTFO) 相的共存。 微观结构分析表明，较高的烧结温度下致密化和晶粒生长更好，从而导致两相之间更好的耦合。介电和铁电研究表明，由于导电相的泄漏，会出现有损极化电场 (P-E) 行为，而磁性则显示，随着铁氧体含量的增加，磁化强度也会增加。所有复合材料均表现出 ME 系数，该系数取决于成分和烧结条件；在 1200 °C 下烧结的 30CTFO - 70BTO 复合材料观察到最高 ME 系数（~1.28 mV/cm.Oe）。 这种改进是由于磁致伸缩和压电响应之间的最佳平衡以及改进的界面应变传递。这些结果表明，同时优化掺杂剂改性的成分和烧结条件对于在块体多铁复合材料中实现改善的磁电耦合至关重要。此外，结果证明了无铅复合材料在下一代低功耗技术中用于多功能设备应用的潜力，包括高密度非易失性存储器（例如， FeRAM/MRAM）、磁场传感器、自旋电子器件和执行器。
-**讨论重点：** 本工作系统研究了通过固相反应方法合成的 (x)Co1.2Ti0.2Fe1.6O4 - (100-x)BaTiO3 (x = 10, 20, 30) 无铅多铁性复合材料，研究成分和烧结温度对其结构、电学、磁学和磁电 (ME) 性能的影响。 X 射线衍射和 Rietveld 精修证实了四方 BaTiO3 (BTO) 和立方尖晶石 Co1.2Ti0.2Fe1.6O4 (CTFO) 相的共存。 结合关键词看，阅读时应重点关注多铁性、磁电耦合相关的极化翻转、磁电耦合、自旋-晶格耦合以及多铁序参量之间的相互制约。
+**中文摘要：** 非相对论自旋分裂（NRSS）​​反铁磁体最近成为一类重要的磁性材料，它将补偿磁性与动量相关的自旋分裂结合起来，为自旋电子学应用提供了新的机会。在这里，我们利用中子衍射、对分布函数、磁力测量和密度泛函理论计算研究了 NiAs 型 Fe$_{1+δ}$Sb 系列 ($δ= 0.17$-0.30)。 中子衍射确定 Fe$_{1+δ}$Sb 采用 $120^\circ$ 共面补偿磁序，传播矢量 $\mathbf{k}=(1/3,\,1/3,\,0)$。正如对分布函数精修所揭示的那样，增加间隙 Fe 会抑制有序磁矩，同时引起局部对称性降低。密度泛函理论预测动量相关的自旋分裂，主要是具有奇宇称 f 波对称性的面外自旋极化，从而将该材料确立为非共线 NRSS 反铁磁体。 受 Fe$_{1+δ}$Sb 和已知的交流磁体 CrSb 结构相似性的启发，我们进一步研究了它们的固溶体，发现中等浓度的 Cr 取代会产生铁磁成分和团簇自旋玻璃行为。这些结果将 Fe$_{1+δ}$Sb 确立为非共线 NRSS 反铁磁性的新平台，并证明金属填隙和替代是调节磁序和性能的有效参数。
+**讨论重点：** 在这里，我们利用中子衍射、对分布函数、磁力测量和密度泛函理论计算研究了 NiAs 型 Fe$_{1+δ}$Sb 系列 ($δ= 0.17$-0.30)。中子衍射确定 Fe$_{1+δ}$Sb 采用 $120^\circ$ 共面补偿磁序，传播矢量 $\mathbf{k}=(1/3,\,1/3,\,0)$。 结合关键词看，阅读时应重点关注铁磁性、交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
