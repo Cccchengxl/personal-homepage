@@ -1,6 +1,6 @@
 # Latest papers for 程旭丽
 
-Updated: 2026-08-24T00:58:49.218703+00:00
+Updated: 2026-08-25T01:00:06.353831+00:00
 Window: last 14 days
 
 ## Notes
@@ -151,7 +151,7 @@ Window: last 14 days
 - Venue: npj Computational Materials
 - Authors: Norman Hogan, Efekan Kökcü, Thomas Steckmann, Liam P. Doak, Carlos Mejuto-Zaera, Daan Camps
 - Link: https://doi.org/10.1038/s41524-026-02289-2
-- Score: 10.0
+- Score: 9.0
 - Match: 标题匹配 dynamical mean field theory; 近两周发布
 
 **中文摘要：** 当前元数据未提供原文摘要。论文题目为“Efficient quantum implementation of dynamical mean field theory for correlated materials”。
