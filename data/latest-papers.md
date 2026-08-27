@@ -1,12 +1,12 @@
 # Latest papers for 程旭丽
 
-Updated: 2026-08-26T01:10:31.456623+00:00
+Updated: 2026-08-27T06:53:54.567869+00:00
 Window: last 14 days
 
 ## Notes
 
-- arXiv query failed for 凝聚态物理强关联体系和多铁性质: HTTP Error 429: Unknown Error
-- 凝聚态物理强关联体系和多铁性质 returned 1 papers; target range is 5-10.
+- arXiv query failed for 机器学习分子动力学模拟与热力学性质: HTTP Error 429: Too Many Requests
+- 机器学习分子动力学模拟与热力学性质 kept previous papers because the current query returned 0 results.
 
 ## 机器学习分子动力学模拟与热力学性质
 
@@ -73,7 +73,7 @@ Window: last 14 days
 - Match: 标题匹配 machine learning interatomic potential
 
 **中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS
-**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注机器学习原子间势相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
+**讨论重点：** 在这里，我们构建了一个ZrO2配置的密度函数理论数据集，该数据集跨越体积、板坯、颗粒、颈部和原子薄线环境，其动机是实验观察到的涉及颈部变薄和原子线形成的ZrO2脱烧过程。我们首先对26个预训练的MLIP进行基准测试，并在零点预测中观察到明显的几何相关性退化。 结合关键词看，阅读时应重点关注机器学习原子间势相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
 
 ### 6. Ultrafast Nonthermal Lattice Destabilization and Suppression of Polar Optical Scattering in Electronically Excited $α$-SiO$_2$ from First-Principles and Deep Neural Network Potential Modeling
 
@@ -85,8 +85,8 @@ Window: last 14 days
 - Score: 8.0
 - Match: 标题匹配 neural network potential
 
-**中文摘要：** 自动翻译暂不可用，以下为原文摘要：We present a multiscale first-principles-to-machine-learning approach to investigate ultrafast lattice dynamics in electronically excited $α$-SiO$_2$. Ab initio molecular dynamics (AIMD) based on electronic-temperature-dependent density functional theory (DFT) are used to train electronic-temperature-dependent deep neural network potentials (DNNPs). The use of DNNPs enables atomistic modeling at near-DFT accuracy of large $α$-SiO$_2$ cells with thousands of atoms. In particular, DNNPs allowed us to obtain accurate phonon band structures and molecular dynamics (MD) of $α$-SiO$_2$ excited by a sudden increase in electronic temperature. With increasing electronic temperature, $T_e$, pronounced lattice destabilization of $α$-SiO$_2$ is found, as evidenced by violations of elastic stability criteria, substantial volumetric expansion, a sharp reduction of the bulk modulus, and progressive weakening of Si-O bonding due to antibonding-state occupation. From the electronic and phonon band structures, we estimated the Frohlich coupling constant, which decreases as $T_e$ increases, suggesting a crossover to a nonpolar phase of $α$-SiO$_2$ at elevated electronic temperature. This is corroborated by the Bader charge analysis. We also suggest that polar optical phonon scattering should be strongly suppressed at $T_e > 2$ eV. From large-cell DNNP-MD simulations, we show that a well-defined thermal equilibrium, as defined by the Maxwell-Boltzmann distribution, is not achieved over the first few hundred femtoseconds. This behavior explains the non-monotonic equilibration of the kinetic temperature after a sudden rise of $T_e$. After $T_e$ is raised to 2.6 eV, Si and O atoms first equilibrate separately at two different temperatures, suggesting an atomic fluid phase, in...
-**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注神经网络势相关的模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性。
+**中文摘要：** 我们提出了一种多尺度第一原理到机器学习的方法来研究电子激发$ α $ -SiO $_2 $中的超快晶格动力学。基于电子温度相关密度泛函理论（ DFT ）的从头分子动力学（ AIMD ）用于训练电子温度相关深度神经网络电位（ DNNP ）。使用DNNP可以以接近DFT的精度对具有数千个原子的大型$ α $ -SiO $_2 $电池进行原子学建模。 特别是， DNNPs使我们能够获得电子温度突然升高所激发的$ α $ -SiO $_2 $的准确声子带结构和分子动力学（ MD ）。随着电子温度的升高， $ T_e $发现了$ α $ -SiO $_2 $的明显晶格不稳定性，这可以通过违反弹性稳定性标准、大量体积膨胀、体积模量的急剧降低以及由于反键态占据而导致的Si-O键的逐渐减弱来证明。 QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 这种行为解释了$ T_e $突然上升后动态温度的非单调平衡。在$ T_e $升至2.6 eV后， Si和O原子首先在两个不同的温度下分别平衡，这表明原子流体相与最近的实验和理论发现一致。
+**讨论重点：** 我们提出了一种多尺度第一原理到机器学习的方法来研究电子激发$ α $ -SiO $_2 $中的超快晶格动力学。基于电子温度相关密度泛函理论（ DFT ）的从头分子动力学（ AIMD ）用于训练电子温度相关深度神经网络电位（ DNNP ）。 结合关键词看，阅读时应重点关注神经网络势相关的模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性。
 
 ### 7. PASS: Perturbation augmented space group structure sampling for transferable Fe-O machine learning interatomic potential
 
@@ -98,8 +98,8 @@ Window: last 14 days
 - Score: 8.0
 - Match: 标题匹配 machine learning interatomic potential
 
-**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS（部分摘要片段自动翻译失败，建议打开原文核对完整摘要。）
-**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注机器学习原子间势相关的第一性原理设置、对称性分析、能带或响应函数计算，以及这些量与可观测物性的对应关系。
+**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 我们提出了一种基于原子簇扩展（ ACE ）框架为Fe-O系统开发首个此类可转移机器学习原子间势（ MLIP ）的系统方法。我们通过批量、表面和界面特性，彻底验证ACE MLIP在纯Fe和Fe-O系统上的准确性和能力。我们展示了在使用ACE MLIP的大规模Fe氧化模拟中FeO样结构的形成。 这项工作表明， PASS方法产生了准确且可转移的MLIP ，能够捕获氧化物生长的反应复杂性，同时在扩展系统中保持计算实用性。
+**讨论重点：** 在这项工作中，我们提出了扰动增强空间群结构采样（ PASS ）方法，以生成由小于10个原子的小细胞结构组成的广泛而有代表性的数据集。然而， Fe-oxygen (O)系统以其结构和磁性复杂性而闻名，这使得生成高质量数据集具有挑战性。 结合关键词看，阅读时应重点关注机器学习原子间势相关的第一性原理设置、对称性分析、能带或响应函数计算，以及这些量与可观测物性的对应关系。
 
 ### 8. Extracting Atomic Environments for Machine Learning Interatomic Potentials
 
@@ -111,7 +111,7 @@ Window: last 14 days
 - Score: 8.0
 - Match: 标题匹配 machine learning interatomic potential
 
-**中文摘要：** 自动翻译暂不可用，以下为原文摘要：In order to appropriately capture large-scale material features and emergent phenomena via atomistic simulations, such as Molecular Dynamics (MD), the system scale can range up to hundreds of millions of atoms. However, the force-field models that drive those simulations are generally trained with Density Functional Theory (DFT) reference data, limited to relatively small configurations on the order of 100s or 1000s of atoms. To compute DFT forces on atoms in regions of interest, for example for active-learning or on-the-fly training of interatomic potentials, one needs to extract a small set of atoms from the larger simulation box, and typically work with periodic boundary conditions for DFT. However, methods to select the shape and size of this extracted set of atoms, as well as to generate a potentially necessary passivating envelope, have not been systematically analyzed. In this work, we benchmark several techniques, including a generative diffusion-based artificial intelligence (AI) approach, for extracting atomic environments from large, bulk configurations and embedding them into smaller configurations suitable for DFT calculations with periodic boundary conditions. We test with a diverse set of material systems, which includes amorphous $\mathrm{SiO_2}$, Ta with screw dislocations, and molten C. We demonstrated a notably simple procedure, a method we refer to as deletions, yields superior performance over an array of alternative extraction methods.
+**中文摘要：** 为了通过原子模拟（如分子动力学（ MD ） ）适当地捕获大规模材料特征和出现的现象，系统规模可以达到数亿个原子。然而，驱动这些模拟的力场模型通常使用密度泛函理论（ DFT ）参考数据进行训练，仅限于大约100或1000个原子的相对较小的配置。 为了计算感兴趣区域的原子上的DFT力，例如用于主动学习或原子间势的即时训练，需要从较大的模拟框中提取一小组原子，并且通常使用DFT的周期性边界条件。然而，尚未系统地分析选择这一提取原子集合的形状和大小以及生成潜在必要的钝化包络的方法。 QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS
 **讨论重点：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 结合关键词看，阅读时应重点关注机器学习原子间势相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
 
 ### 9. Charge-Density-Wave Phase Transitions in Monolayer 1T-TaS2 from Universal Machine Learning Molecular Dynamics
@@ -124,8 +124,8 @@ Window: last 14 days
 - Score: 8.0
 - Match: 标题匹配 machine learning molecular dynamics
 
-**中文摘要：** 自动翻译暂不可用，以下为原文摘要：Charge-density-wave (CDW) phases in 1T transition-metal dichalcogenides arise from strong electron-phonon coupling and accompanying lattice instabilities. Capturing their temperature-dependent structural evolution using conventional first-principles molecular dynamics (MD) remains challenging because of the large supercells and extensive finite-temperature sampling required. Here, we combine density functional theory (DFT), universal machine-learning interatomic potentials (MLIPs), MD, and temperature-dependent effective potential phonon calculations to investigate the structural and vibrational signatures of CDW transitions in monolayer 1T-TaS2. Benchmarking against DFT displacement energies identifies UMA-s-1p1 universal machine learning potentials with sufficient accuracy for subsequent finite-temperature simulations. Our results show that large-scale MD simulations reproduce the experimentally observed phase transition sequence from the low-temperature Star-of-David (SoD) distorted structure to the high-temperature primitive hexagonal structure, as quantified by the number of Ta atoms attributed to SoDs. Heating-cooling cycles exhibit thermal hysteresis, and upon cooling, the system freezes into a multi-domain state in which α and \b{eta} CDW chiralities nucleate independently and persist to the lowest temperatures. These findings demonstrate that carefully benchmarked universal MLIPs can provide a scalable framework for finite-temperature studies of CDW materials.
-**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注机器学习分子动力学相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
+**中文摘要：** 1T过渡金属二硫族化物中的电荷密度波（ CDW ）相源于强电子-声子耦合和伴随的晶格不稳定性。由于需要大型超级电池和广泛的有限温度采样，使用传统的第一原理分子动力学（ MD ）捕获它们的温度依赖性结构演变仍然具有挑战性。 在这里，我们结合密度泛函理论（ DFT ） ，通用机器学习原子间势（ MLIP ） ， MD和温度依赖性有效声子计算来研究单层1T-TaS2中CDW跃迁的结构和振动特征。针对DFT位移能量的基准测试可识别UMA-s-1p1通用机器学习电位，具有足够的准确性，可用于后续的有限温度模拟。 QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 这些发现表明，经过仔细基准测试的通用MLIP可以为CDW材料的有限温度研究提供一个可扩展的框架。
+**讨论重点：** 在这里，我们结合密度泛函理论（ DFT ） ，通用机器学习原子间势（ MLIP ） ， MD和温度依赖性有效声子计算来研究单层1T-TaS2中CDW跃迁的结构和振动特征。这些发现表明，经过仔细基准测试的通用MLIP可以为CDW材料的有限温度研究提供一个可扩展的框架。 结合关键词看，阅读时应重点关注机器学习分子动力学相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
 
 ### 10. A high-dimensional neural network potential for finite-temperature phenomena in NiTi martensite
 
@@ -137,20 +137,137 @@ Window: last 14 days
 - Score: 8.0
 - Match: 标题匹配 neural network potential
 
-**中文摘要：** 自动翻译暂不可用，以下为原文摘要：We present a high-dimensional neural network potential (HDNNP) for the martensitic phase of the NiTi shape-memory alloy trained to density functional theory (DFT) data. A central aspect of this work is the systematic validation of the potential with respect to the underlying DFT reference method for key properties governing structural evolution, including equilibrium crystal structures, elastic constants, generalized-stacking fault energies, and vibrational spectra. The HDNNP accurately describes the relative stability of the B19$^\prime$ and B33 phases, including subtle energy differences on the order of meV/atom. The predicted stacking-fault energy landscape is strongly anisotropic and reveals a preferential shear pathway, providing atomistic insight into deformation and twinning mechanisms. Finite-temperature molecular dynamics simulations further enable the investigation of unconstrained structural evolution as a function of temperature. Overall, the developed HDNNP provides a robust basis for atomistic simulations of the complex structural and functional behavior of martensitic NiTi systems containing hundreds of thousands of atoms on nanosecond time scales.
-**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注神经网络势相关的模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性。
+**中文摘要：** 我们针对密度泛函理论（ DFT ）数据训练的NiTi形状记忆合金的马氏体相提出了一种高维神经网络势（ HDNNP ）。这项工作的一个核心方面是系统地验证了控制结构演化的关键属性的潜在DFT参考方法，包括平衡晶体结构、弹性常数、广义堆叠断层能量和振动光谱。 HDNNP准确描述了B19 $ ^\ prime $和B33相的相对稳定性，包括meV/原子量级的微小能量差异。预测的堆叠断层能量景观具有强烈的各向异性，揭示了优先剪切路径，提供了对变形和孪生机制的原子学见解。有限温度分子动力学模拟进一步支持对作为温度函数的无约束结构演化的研究。 总体而言，开发的HDNNP为在纳秒时间尺度上含有数十万个原子的马氏体NiTi系统的复杂结构和功能行为的原子学模拟提供了坚实的基础。
+**讨论重点：** 我们针对密度泛函理论（ DFT ）数据训练的NiTi形状记忆合金的马氏体相提出了一种高维神经网络势（ HDNNP ）。这项工作的一个核心方面是系统地验证了控制结构演化的关键属性的潜在DFT参考方法，包括平衡晶体结构、弹性常数、广义堆叠断层能量和振动光谱。 结合关键词看，阅读时应重点关注神经网络势相关的模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性。
 
 ## 凝聚态物理强关联体系和多铁性质
 
-### 1. Efficient quantum implementation of dynamical mean field theory for correlated materials
+### 1. Altermagnetic Anomalous Hall Effect and Spin--Edge-Locked Chiral Modes in a Modified Kane--Mele--Hubbard Model
 
-- Source: Journal
-- Date: 2026-08-17
-- Venue: npj Computational Materials
-- Authors: Norman Hogan, Efekan Kökcü, Thomas Steckmann, Liam P. Doak, Carlos Mejuto-Zaera, Daan Camps
-- Link: https://doi.org/10.1038/s41524-026-02289-2
-- Score: 8.0
-- Match: 标题匹配 dynamical mean field theory; 近两周发布
+- Source: arXiv
+- Date: 2026-08-25T11:19:25Z
+- Venue: cond-mat.str-el
+- Authors: Mohsen Hafez-Torbati, Alireza Qaiumzadeh
+- Link: https://arxiv.org/abs/2608.24408v1
+- Score: 31.0
+- Match: 标题匹配 Hubbard model; 标题匹配 altermagnetic; 标题匹配 altermagnet; 最近 3 天发布
 
-**中文摘要：** 当前元数据未提供原文摘要。论文题目为“Efficient quantum implementation of dynamical mean field theory for correlated materials”。
-**讨论重点：** 结合关键词看，阅读时应重点关注动力学平均场理论相关的研究对象、方法假设、关键参数、数据来源，以及结果能否迁移到相邻材料或物理体系。
+**中文摘要：** 自动翻译暂不可用，以下为原文摘要：We establish a correlation-driven route to the altermagnetic anomalous Hall effect (AHE) and its associated \emph{spin--edge-locked} edge states in a modified Kane--Mele--Hubbard model. Using dynamical mean-field theory (DMFT), we show that, at half-filling, increasing the Hubbard interaction drives the system from a metallic paramagnetic phase hosting antichiral edge states into an insulating in-plane Néel-type antiferromagnetic phase, in which a residual antiunitary symmetry forbids the AHE. Hole doping induces a spin-flop transition to an out-of-plane Néel-type antiferromagnetic phase, thereby breaking this symmetry and generating a finite anomalous Hall conductivity that persists into the strongly correlated regime. Distinct from a conventional spin-polarized Hall response in ferromagnets, the altermagnetic AHE receives equal and additive contributions from the two symmetry-related spin sectors and is accompanied by spin--edge-locked chiral states. Our results demonstrate that carrier doping and spin-rotationally invariant Hubbard interactions are sufficient to realize the altermagnetic AHE, without invoking an explicitly Ising-like interaction, and provide a realistic microscopic route toward its realization in correlated transition metal dichalcogenides monolayers.
+**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注Hubbard 模型、交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
+
+### 2. Interaction-mediated Co-existence of Altermagnetism and Topology
+
+- Source: arXiv
+- Date: 2026-08-24T16:13:55Z
+- Venue: cond-mat.str-el
+- Authors: Jasmin Bedow, Nitin Kaushal, Marcel Franz
+- Link: https://arxiv.org/abs/2608.23442v1
+- Score: 29.0
+- Match: 摘要匹配 Hubbard model; 标题匹配 altermagnetism; 摘要匹配 altermagnetic; 标题匹配 altermagnet
+
+**中文摘要：** 自动翻译暂不可用，以下为原文摘要：We study an extended Hubbard model on Lieb lattice at electron filling 2 and 4, and demonstrate that the interactions lead to the simultaneous emergence of altermagnetic order and a topological gap. Using unrestricted Hartree-Fock theory, we evaluate both the altermagnetic and topological order parameters and show that they co-exist with an associated quantum spin Hall effect in a large region of the phase diagram, which we further support using exact diagonalization. Moreover, we demonstrate that inversion-symmetry breaking terms can also mediate second-order topological phases with associated corner modes.
+**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注Hubbard 模型、交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
+
+### 3. Electric excitation of spin resonance in altermagnetic and antiferromagnetic conductors
+
+- Source: arXiv
+- Date: 2026-08-26T01:02:14Z
+- Venue: cond-mat.str-el
+- Authors: R. Ramazashvili, V. Shablenko, Ya. B. Bazaliy
+- Link: https://arxiv.org/abs/2608.25265v1
+- Score: 27.0
+- Match: 摘要匹配 altermagnetism; 标题匹配 altermagnetic; 标题匹配 altermagnet; 最近 3 天发布
+
+**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS
+**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
+
+### 4. Mapping metallic d-wave altermagnetism across the TiNiSi structural family
+
+- Source: arXiv
+- Date: 2026-08-24T15:54:25Z
+- Venue: cond-mat.mtrl-sci
+- Authors: Zhen Zhang, Subhadip Pradhan, Kirill D. Belashchenko, Vladimir Antropov
+- Link: https://arxiv.org/abs/2608.23409v1
+- Score: 26.0
+- Match: 标题匹配 altermagnetism; 摘要匹配 altermagnetic; 标题匹配 altermagnet; 最近 3 天发布
+
+**中文摘要：** 自动翻译暂不可用，以下为原文摘要：The prospect of using altermagnets as switchable sources of perpendicularly polarized spin currents has intensified the search for candidate materials, yet metallic d-wave systems with sizable spin-splitter responses remain scarce. Here, we identify an empirical magnetic motif that supports metallic d-wave altermagnetism in the TiNiSi structural family: ferromagnetically ordered zigzag chains with antiferromagnetic interchain coupling in a relatively low-symmetry crystal environment. The TiNiSi structure type combines this motif with broad chemical flexibility and competing magnetic ground states. By combining first-principles screening of thermodynamic stability and magnetic ground states across 280 ternary systems, we identify 16 metallic d-wave altermagnets. This set recovers four experimentally known members---WFeB, NbMnP, TaMnP, and NbMnAs---and yields 12 new predictions, of which ScMnP, TaMnAs, ScMnAs, MoMnAs, MoMnSi, and WMnSi are the most promising. Noncollinear calculations indicate that the collinear altermagnetic configuration is the ground state across them. Each of the six leading new candidates has a nonzero spin-splitter angle and a finite anomalous Hall conductivity. Notably, ScMnP and TaMnAs exhibit strong spin-splitter responses despite modest altermagnetic band splitting. These results establish TiNiSi-type metallic d-wave altermagnets as a chemically versatile platform for efficient charge-to-spin conversion and provide an empirical magnetic-motif-guided route to identifying further candidates.
+**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
+
+### 5. Substitution effects in RuO$_2$ single crystals
+
+- Source: arXiv
+- Date: 2026-08-26T10:31:14Z
+- Venue: cond-mat.mtrl-sci
+- Authors: Shubhankar Paul, Kunihiko Yamauchi, Shogo Yamashita, Hisakazu Matsuki, Shuhei Iwashita, Mitsuhiko Maesato
+- Link: https://arxiv.org/abs/2608.25615v1
+- Score: 23.0
+- Match: 摘要匹配 ferromagnetism; 摘要匹配 altermagnetism; 摘要匹配 altermagnetic; 摘要匹配 altermagnet
+
+**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS
+**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注铁磁性、交变磁性相关的交变磁性的对称性来源、动量空间自旋劈裂，以及这些特征如何影响输运、光学或磁动力学响应。
+
+### 6. Incommensurate spin fluctuations in one-dimensional Kondo metal CeCo2Ga8
+
+- Source: arXiv
+- Date: 2026-08-26T17:38:16Z
+- Venue: cond-mat.str-el
+- Authors: Yixuan Huang, P. Murgatroyd, Yi Wu, M. Cook, P. F. S. Rosa, E. D. Bauer
+- Link: https://arxiv.org/abs/2608.26071v1
+- Score: 17.0
+- Match: 摘要匹配 heavy fermion; 摘要匹配 density matrix renormalization group; 最近 3 天发布
+
+**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS（部分摘要片段自动翻译失败，建议打开原文核对完整摘要。）
+**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注重费米子、密度矩阵重整化群相关的自由能路径、相稳定性、热力学量的不确定性，以及势函数误差如何传递到宏观性质。
+
+### 7. High-pressure phase transitions in the quantum spin liquid candidate Na2Co2TeO6 probed by Raman spectroscopy
+
+- Source: arXiv
+- Date: 2026-08-25T19:09:28Z
+- Venue: cond-mat.str-el, cond-mat.mtrl-sci
+- Authors: Ihsan Ahmed Kolasseri, Maria Mei Ravnebæk, Subhadip Das, Carl Jonas Linnemann, Haidong Zhou, Christian Frydendahl
+- Link: https://arxiv.org/abs/2608.25076v1
+- Score: 17.0
+- Match: 标题匹配 quantum spin liquid; 最近 3 天发布
+
+**中文摘要：** 自动翻译暂不可用，以下为原文摘要：The quasi-2D magnet Na2Co2TeO6 (NCTO) is a candidate for a Kitaev Quantum Spin Liquid (KQSL) state. Pressure-tuning in such materials is of interest as a potential method to tune the Kitaev exchange interactions, which are strongly dependent on bond geometry. Here we report a Raman spectroscopic study of NCTO inside a diamond anvil cell (DAC) with pressure applied up to 16.3 GPa. Based on the changes in the Raman modes, this pressure range is divided into three regions. The appearance and disappearance of several modes and changes in the polarization dependence of the representative modes, most prominently above 13.8 GPa, point to pressure-induced phase transitions in this material.
+**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注量子自旋液体相关的样品制备、实验表征条件、关键观测信号，以及这些信号如何支撑物理机制解释。
+
+### 8. Accidental accuracy and vertex corrections in $GW$: Exact benchmarks for the extended Hubbard model
+
+- Source: arXiv
+- Date: 2026-08-25T17:28:07Z
+- Venue: cond-mat.str-el
+- Authors: Michael O. Atambo
+- Link: https://arxiv.org/abs/2608.24838v2
+- Score: 17.0
+- Match: 标题匹配 Hubbard model; 最近 3 天发布
+
+**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS（部分摘要片段自动翻译失败，建议打开原文核对完整摘要。）
+**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注Hubbard 模型相关的有效模型参数、电子关联强度、相图边界以及可与实验对照的谱学或输运信号。
+
+### 9. Influence of the inter-orbital interaction and kinetic terms on superconductivity: a simple two-orbital Hubbard model
+
+- Source: arXiv
+- Date: 2026-08-25T10:01:17Z
+- Venue: cond-mat.str-el, cond-mat.supr-con
+- Authors: Vito Marino, Diego Florez-Ablan, Luca F. Tocchio, Massimo Capone, Federico Becca
+- Link: https://arxiv.org/abs/2608.24337v1
+- Score: 17.0
+- Match: 标题匹配 Hubbard model; 最近 3 天发布
+
+**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS
+**讨论重点：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 结合关键词看，阅读时应重点关注Hubbard 模型相关的有效模型参数、电子关联强度、相图边界以及可与实验对照的谱学或输运信号。
+
+### 10. Thermal DMRG for quasi one-dimensional magnetic molecules and chains
+
+- Source: arXiv
+- Date: 2026-08-25T14:29:34Z
+- Venue: cond-mat.str-el
+- Authors: L. Horstmann, J. Schnack
+- Link: https://arxiv.org/abs/2608.24608v1
+- Score: 16.0
+- Match: 摘要匹配 density matrix renormalization group; 摘要匹配 tensor network; 最近 3 天发布
+
+**中文摘要：** 自动翻译暂不可用，以下为原文摘要：Density matrix renormalization group methods or tensor network methods in general can not only be used to determine ground states but also to evaluate thermal equilibrium properties. Although convergence is superior for one-dimensional quantum spin systems with nearest neighbor exchange and open boundary conditions, the hope is that these methods can as well be employed to approximate magnetic observables of magnetic molecules with more complex interaction patterns. Here, we study the accuracy that can realistically be achieved for several archetypical quasi one-dimensional structures using the TenPy suite. In our study, we aim at systems that are too large for exact diagonalization or Krylov space methods.
+**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注密度矩阵重整化群、张量网络相关的研究对象、方法假设、关键参数、数据来源，以及结果能否迁移到相邻材料或物理体系。
