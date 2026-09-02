@@ -1,10 +1,12 @@
 # Latest papers for 程旭丽
 
-Updated: 2026-09-01T03:14:07.901747+00:00
+Updated: 2026-09-02T02:30:16.417144+00:00
 Window: last 14 days
 
 ## Notes
 
+- arXiv query failed for 机器学习分子动力学模拟与热力学性质: HTTP Error 429: Unknown Error
+- 机器学习分子动力学模拟与热力学性质 kept previous papers because the current query returned 0 results.
 - arXiv query failed for 凝聚态物理强关联体系和多铁性质: HTTP Error 429: Unknown Error
 - 凝聚态物理强关联体系和多铁性质 kept previous papers because the current query returned 0 results.
 - 凝聚态物理强关联体系和多铁性质 returned 1 papers; target range is 5-10.
@@ -99,8 +101,8 @@ Window: last 14 days
 - Score: 8.0
 - Match: 标题匹配 machine learning interatomic potential; 近两周发布
 
-**中文摘要：** 自动翻译暂不可用，以下为原文摘要：Bulk materials, as opposed to nanomaterials, require molecular dynamics (MD) simulations on a large spatial scale (~10^9 atoms or more) to adequately capture their atomic-scale physical properties. Previously, the introduction of machine-learning interatomic potentials (MLIPs) has extended MD to this scale, but even single-component bulk systems require tens of thousands of GPUs on high-end supercomputers. However, multi-component bulk MD simulations remain barely achievable, as the HBM footprint of existing MLIPs - already substantial for single-component systems - grows explosively in multi-component scenarios. This paper proposes an MLIP with a small HBM footprint - less than 3% that of existing MLIPs - unlocking multi-component bulk MD using only hundreds of GPUs. This is achieved by first identifying feature vectors and intermediate tensors as the two primary contributors to HBM footprints in existing MLIPs. To address these two sources, the dimensionality of the feature vectors has been reduced by introducing physical and chemical knowledge, and intermediate tensors have been eliminated by aggressively fusing all kernels into a single mega-kernel. In evaluation, the proposed MLIP has used 144 NVIDIA A100 GPUs to perform MD simulations on a 6-component bulk system with 1.14x10^9 atoms, while previously such MD simulation spatial scale has been restricted to unary systems and typically achieved on high-end supercomputers equipped with tens of thousands of GPUs.
-**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注机器学习原子间势相关的模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性。
+**中文摘要：** 与纳米材料相反，散装材料需要在大空间尺度（约10 ^ 9个或更多原子）上进行分子动力学（ MD ）模拟，以充分捕捉其原子尺度的物理特性。以前，机器学习原子间势（ MLIP ）的引入已经将MD扩展到这个规模，但即使是单组件批量系统也需要高端超级计算机上的数万个GPU。 QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS
+**讨论重点：** 与纳米材料相反，散装材料需要在大空间尺度（约10 ^ 9个或更多原子）上进行分子动力学（ MD ）模拟，以充分捕捉其原子尺度的物理特性。以前，机器学习原子间势（ MLIP ）的引入已经将MD扩展到这个规模，但即使是单组件批量系统也需要高端超级计算机上的数万个GPU。 结合关键词看，阅读时应重点关注机器学习原子间势相关的模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性。
 
 ### 8. Cross-Geometry Transferability Assessment of Universal Machine Learning Interatomic Potentials: From Bulk Materials to Atomic Nanowires
 
@@ -113,7 +115,7 @@ Window: last 14 days
 - Match: 标题匹配 machine learning interatomic potential
 
 **中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS
-**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注机器学习原子间势相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
+**讨论重点：** 在这里，我们构建了一个ZrO2配置的密度函数理论数据集，该数据集跨越体积、板坯、颗粒、颈部和原子薄线环境，其动机是实验观察到的涉及颈部变薄和原子线形成的ZrO2脱烧过程。我们首先对26个预训练的MLIP进行基准测试，并在零点预测中观察到明显的几何相关性退化。 结合关键词看，阅读时应重点关注机器学习原子间势相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
 
 ### 9. Ultrafast Nonthermal Lattice Destabilization and Suppression of Polar Optical Scattering in Electronically Excited $α$-SiO$_2$ from First-Principles and Deep Neural Network Potential Modeling
 
@@ -125,8 +127,8 @@ Window: last 14 days
 - Score: 8.0
 - Match: 标题匹配 neural network potential
 
-**中文摘要：** 自动翻译暂不可用，以下为原文摘要：We present a multiscale first-principles-to-machine-learning approach to investigate ultrafast lattice dynamics in electronically excited $α$-SiO$_2$. Ab initio molecular dynamics (AIMD) based on electronic-temperature-dependent density functional theory (DFT) are used to train electronic-temperature-dependent deep neural network potentials (DNNPs). The use of DNNPs enables atomistic modeling at near-DFT accuracy of large $α$-SiO$_2$ cells with thousands of atoms. In particular, DNNPs allowed us to obtain accurate phonon band structures and molecular dynamics (MD) of $α$-SiO$_2$ excited by a sudden increase in electronic temperature. With increasing electronic temperature, $T_e$, pronounced lattice destabilization of $α$-SiO$_2$ is found, as evidenced by violations of elastic stability criteria, substantial volumetric expansion, a sharp reduction of the bulk modulus, and progressive weakening of Si-O bonding due to antibonding-state occupation. From the electronic and phonon band structures, we estimated the Frohlich coupling constant, which decreases as $T_e$ increases, suggesting a crossover to a nonpolar phase of $α$-SiO$_2$ at elevated electronic temperature. This is corroborated by the Bader charge analysis. We also suggest that polar optical phonon scattering should be strongly suppressed at $T_e > 2$ eV. From large-cell DNNP-MD simulations, we show that a well-defined thermal equilibrium, as defined by the Maxwell-Boltzmann distribution, is not achieved over the first few hundred femtoseconds. This behavior explains the non-monotonic equilibration of the kinetic temperature after a sudden rise of $T_e$. After $T_e$ is raised to 2.6 eV, Si and O atoms first equilibrate separately at two different temperatures, suggesting an atomic fluid phase, in...
-**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注神经网络势相关的模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性。
+**中文摘要：** 我们提出了一种多尺度第一原理到机器学习的方法来研究电子激发$ α $ -SiO $_2 $中的超快晶格动力学。基于电子温度相关密度泛函理论（ DFT ）的从头分子动力学（ AIMD ）用于训练电子温度相关深度神经网络电位（ DNNP ）。使用DNNP可以以接近DFT的精度对具有数千个原子的大型$ α $ -SiO $_2 $电池进行原子学建模。 特别是， DNNPs使我们能够获得电子温度突然升高所激发的$ α $ -SiO $_2 $的准确声子带结构和分子动力学（ MD ）。随着电子温度的升高， $ T_e $发现了$ α $ -SiO $_2 $的明显晶格不稳定性，这可以通过违反弹性稳定性标准、大量体积膨胀、体积模量的急剧降低以及由于反键态占据而导致的Si-O键的逐渐减弱来证明。 QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 这种行为解释了$ T_e $突然上升后动态温度的非单调平衡。在$ T_e $升至2.6 eV后， Si和O原子首先在两个不同的温度下分别平衡，这表明原子流体相与最近的实验和理论发现一致。
+**讨论重点：** 我们提出了一种多尺度第一原理到机器学习的方法来研究电子激发$ α $ -SiO $_2 $中的超快晶格动力学。基于电子温度相关密度泛函理论（ DFT ）的从头分子动力学（ AIMD ）用于训练电子温度相关深度神经网络电位（ DNNP ）。 结合关键词看，阅读时应重点关注神经网络势相关的模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性。
 
 ### 10. PASS: Perturbation augmented space group structure sampling for transferable Fe-O machine learning interatomic potential
 
@@ -138,8 +140,8 @@ Window: last 14 days
 - Score: 8.0
 - Match: 标题匹配 machine learning interatomic potential
 
-**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS（部分摘要片段自动翻译失败，建议打开原文核对完整摘要。）
-**讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注机器学习原子间势相关的第一性原理设置、对称性分析、能带或响应函数计算，以及这些量与可观测物性的对应关系。
+**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 我们提出了一种基于原子簇扩展（ ACE ）框架为Fe-O系统开发首个此类可转移机器学习原子间势（ MLIP ）的系统方法。我们通过批量、表面和界面特性，彻底验证ACE MLIP在纯Fe和Fe-O系统上的准确性和能力。我们展示了在使用ACE MLIP的大规模Fe氧化模拟中FeO样结构的形成。 这项工作表明， PASS方法产生了准确且可转移的MLIP ，能够捕获氧化物生长的反应复杂性，同时在扩展系统中保持计算实用性。
+**讨论重点：** 在这项工作中，我们提出了扰动增强空间群结构采样（ PASS ）方法，以生成由小于10个原子的小细胞结构组成的广泛而有代表性的数据集。然而， Fe-oxygen (O)系统以其结构和磁性复杂性而闻名，这使得生成高质量数据集具有挑战性。 结合关键词看，阅读时应重点关注机器学习原子间势相关的第一性原理设置、对称性分析、能带或响应函数计算，以及这些量与可观测物性的对应关系。
 
 ## 凝聚态物理强关联体系和多铁性质
 
