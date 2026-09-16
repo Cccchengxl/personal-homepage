@@ -1,11 +1,11 @@
 # Latest papers for 程旭丽
 
-Updated: 2026-09-15T03:01:22.023206+00:00
+Updated: 2026-09-16T02:59:27.824266+00:00
 Window: last 14 days
 
 ## Notes
 
-- arXiv query failed for 机器学习分子动力学模拟与热力学性质: HTTP Error 429: Unknown Error
+- arXiv query failed for 机器学习分子动力学模拟与热力学性质: The read operation timed out
 - 机器学习分子动力学模拟与热力学性质 kept previous papers because the current query returned 0 results.
 - arXiv query failed for 凝聚态物理强关联体系和多铁性质: HTTP Error 429: Unknown Error
 - 凝聚态物理强关联体系和多铁性质 returned 1 papers; target range is 5-10.
@@ -74,7 +74,7 @@ Window: last 14 days
 - Score: 10.0
 - Match: 摘要匹配 machine learning interatomic potential; 近两周发布
 
-**中文摘要：** 机器学习原子间势 (MLIP) 已成为分子动力学模拟中密度泛函理论 (DFT) 的强大替代方案，以一小部分计算成本提供接近 DFT 的精度。然而，许多最先进的 MLIP 仍然对计算要求很高，并且充当黑匣子，限制了物理可解释性。在这项工作中，我们评估了超快力场 (UF$^3$) 的潜力，它采用三次 B 样条基础的线性回归来表示有效的两体和三体相互作用。 我们表明 UF$^3$ 显示的准确度与 GAP、MTP、NNP (Behler Parrinello) 和 qSNAP MLIP 等已建立的模型相当。我们通过计算六种元素系统的熔点来进一步研究 UF$^3$ 的可转移性，这些元素系统的电势拟合没有任何固液界面配置或有关熔化的明确热力学信息。 该模型再现了简单金属（Ni、Cu、Li）$\sim$6% 范围内的实验熔点，但大大低估了 Mo 和 Si 的熔点，并且未能产生 Ge 的稳定电势，反映出对于具有强角键或共价键的系统，在三体项处截断固定膨胀的局限性。我们进一步说明了 UF$^3$ 基于样条的公式如何允许直接可视化所学习的交互，从而能够识别黑盒方法经常掩盖的非物理行为。
+**中文摘要：** 机器学习原子间势 (MLIP) 已成为分子动力学模拟中密度泛函理论 (DFT) 的强大替代方案，以一小部分计算成本提供接近 DFT 的精度。然而，许多最先进的 MLIP 仍然对计算要求很高，并且充当黑匣子，限制了物理可解释性。在这项工作中，我们评估了超快力场 (UF$^3$) 的潜力，它采用三次 B 样条基础的线性回归来表示有效的两体和三体相互作用。 我们表明 UF$^3$ 显示的准确度可与 GAP、MTP、NNP (Behler Parrinello) 和 qSNAP MLIP 等已建立的模型相媲美。我们通过计算六种元素系统的熔点来进一步研究 UF$^3$ 的可转移性，这些元素系统的电势拟合没有任何固液界面配置或有关熔化的明确热力学信息。 该模型再现了简单金属（Ni、Cu、Li）$\sim$6% 范围内的实验熔点，但大大低估了 Mo 和 Si 的熔点，并且未能产生 Ge 的稳定电势，反映出对于具有强角键或共价键的系统，在三体项处截断固定膨胀的局限性。我们进一步说明了 UF$^3$ 基于样条的公式如何允许直接可视化所学习的交互，从而能够识别黑盒方法经常掩盖的非物理行为。
 **讨论重点：** 我们通过计算六种元素系统的熔点来进一步研究 UF$^3$ 的可转移性，这些元素系统的电势拟合没有任何固液界面配置或有关熔化的明确热力学信息。该模型再现了简单金属（Ni、Cu、Li）$\sim$6% 范围内的实验熔点，但大大低估了 Mo 和 Si 的熔点，并且未能产生 Ge 的稳定电势，反映出对于具有强角键或共价键的系统，在三体项处截断固定膨胀的局限性。 结合关键词看，阅读时应重点关注机器学习原子间势相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
 
 ### 6. A Hierarchical Synergistic Deep Learning Framework Integrating Composition, Structure, and Ionic Transport for Solid-State Electrolyte Discovery
