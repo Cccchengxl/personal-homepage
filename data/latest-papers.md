@@ -1,14 +1,14 @@
 # Latest papers for 程旭丽
 
-Updated: 2026-10-20T03:05:42.758057+00:00
+Updated: 2026-10-21T03:01:09.438231+00:00
 Window: last 14 days
 
 ## Notes
 
-- arXiv query failed for 机器学习分子动力学模拟与热力学性质: HTTP Error 429: Unknown Error
+- arXiv query failed for 机器学习分子动力学模拟与热力学性质: The read operation timed out
 - 机器学习分子动力学模拟与热力学性质 kept previous papers because the current query returned 0 results.
 - 机器学习分子动力学模拟与热力学性质 returned 1 papers; target range is 5-10.
-- arXiv query failed for 凝聚态物理强关联体系和多铁性质: HTTP Error 429: Unknown Error
+- arXiv query failed for 凝聚态物理强关联体系和多铁性质: The read operation timed out
 - 凝聚态物理强关联体系和多铁性质 kept previous papers because the current query returned 0 results.
 - 凝聚态物理强关联体系和多铁性质 returned 1 papers; target range is 5-10.
 
