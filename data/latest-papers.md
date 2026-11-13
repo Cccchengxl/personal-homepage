@@ -1,6 +1,6 @@
 # Latest papers for 程旭丽
 
-Updated: 2026-11-12T05:30:10.089712+00:00
+Updated: 2026-11-13T04:45:33.542144+00:00
 Window: last 14 days
 
 ## Notes
@@ -22,8 +22,8 @@ Window: last 14 days
 - Score: 12.0
 - Match: 摘要匹配 machine learning interatomic potential; 最近 3 天发布
 
-**中文摘要：** 质子转移是酸性或碱性水溶液中异常高导电性的原因。然而，质子转移机制对浓水溶液导电性的贡献尚不清楚。在本文中，我们使用分子动力学模拟和机器学习原子间势（MLIP）计算了不同浓度的KOH(aq)体系的输运性质，其中包含了质子转移。 我们量化了质子转移机制对氢氧根离子和水分子扩散系数以及电解质离子电导率和迁移数的贡献。在较低浓度下，其贡献很大，但在极高浓度下则会减小。
-**讨论重点：** 质子转移是酸性或碱性水溶液中异常高电导率的原因。然而，质子转移机制对浓水溶液导电性的贡献尚不清楚。 结合关键词看，阅读时应重点关注机器学习原子间势相关的模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性。
+**中文摘要：** 质子转移是造成酸性或碱性水溶液中异常高电导率的原因。然而，质子转移机制对浓水溶液导电性的贡献尚不清楚。在本研究中，我们使用分子动力学模拟和机器学习原子间势（MLIP）计算了不同浓度的KOH(aq)体系的输运性质，其中包含了质子转移。 我们量化了质子转移机制对氢氧根离子和水分子扩散系数的贡献，以及电解质的离子电导率和迁移数。在较低浓度下，这种贡献相当大，但在极高浓度下则会减小。
+**讨论重点：** 质子转移是造成酸性或碱性水溶液中异常高电导率的原因。然而，质子转移机制对浓水溶液导电性的贡献尚不清楚。 结合关键词看，阅读时应重点关注机器学习原子间势相关的模拟体系、时间尺度、温度条件、动力学稳定性，以及有限温度性质对势函数质量的敏感性。
 
 ### 2. A Hybrid Message-Passing and Electric-Field Representation for Electrostatic QM/MM Embedding with Machine Learning Interatomic Potentials
 
@@ -35,7 +35,7 @@ Window: last 14 days
 - Score: 12.0
 - Match: 标题匹配 machine learning interatomic potential; 近两周发布
 
-**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 然而，准确性和效率在很大程度上取决于MLIP纳入经典（静电）环境信息的方式。在这里，我们证明了纯粹基于外部电场衍生特征的现有策略无法区分某些环境，最终限制了它们的准确性。 作为一种解决方案，我们提出对等变TensorNet架构的扩展，通过将靠近量子区域的经典原子纳入消息传递方案，并结合由电场导出的特征来描述更远处的环境，从而减轻这一缺陷。我们表明，这种组合比单独使用任一种方法都能实现更高的准确性。
+**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 然而，准确性和效率在很大程度上取决于MLIP纳入经典（静电）环境信息的方式。在这里，我们证明了纯粹基于从外电场中得出的特征的现有策略无法区分某些环境，最终限制了它们的准确性。 作为一种解决方案，我们提出对等变TensorNet架构的扩展，通过将靠近量子区域的经典原子纳入消息传递方案，并结合由电场导出的特征来描述更远处的环境，从而减轻这一缺陷。我们表明，这种组合实现的准确性高于单独使用任一种方法。
 **讨论重点：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 结合关键词看，阅读时应重点关注机器学习原子间势相关的新方法的假设、训练或计算流程、适用体系，以及与已有方法相比的优势和局限。
 
 ### 3. Does System Size Matter in Uncertainty Quantification for Machine Learning Interatomic Potentials?
@@ -48,7 +48,7 @@ Window: last 14 days
 - Score: 11.0
 - Match: 标题匹配 machine learning interatomic potential; 近两周发布
 
-**中文摘要：** 机器学习原子间势（MLIP）通常使用不确定性估计来标记分布外（OOD）构型，并选择用于主动学习的结构。一个关键问题是，所得结构级不确定性得分在不同系统规模之间是否仍具有可比性。一种常见做法是按均值或最大值聚合每个原子的不确定性，并将所得分数与固定阈值进行比较，从而隐含地假设存在这种可比性。 QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 虽然大型结构中高度不确定的原子可能表明存在新颖的局部环境，但与对构建在训练分布之外的OOD结构进行再训练相比，对这些结构进行再训练的改进甚微。我们的结果揭示了不考虑大小的不确定性标准的实际局限性，并促使人们进行考虑大小的校准，以便在大规模原子模拟中实现更可靠的OOD检测。
+**中文摘要：** 机器学习原子间势（MLIP）通常使用不确定性估计来标记分布外（OOD）构型，并选择用于主动学习的结构。一个关键问题是，所得结构级不确定性得分在不同系统规模之间是否仍具有可比性。一种常见做法是按均值或最大值聚合每个原子的不确定性，并将所得分数与固定阈值进行比较，从而隐含地假设存在这种可比性。 QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 虽然大型结构中高度不确定的原子可能表明存在新颖的局部环境，但与对构建在训练分布之外的OOD结构进行再训练相比，对这些结构进行再训练的改进甚微。我们的结果揭示了不考虑大小的不确定性标准的实际局限性，并促使人们进行考虑大小的校准，以便在大规模原子模拟中更可靠地进行OOD检测。
 **讨论重点：** 机器学习原子间势（MLIP）通常使用不确定性估计来标记分布外（OOD）构型，并选择用于主动学习的结构。一个关键问题是，所得结构级不确定性得分在不同系统规模之间是否仍具有可比性。 结合关键词看，阅读时应重点关注机器学习原子间势相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
 
 ### 4. Distilling Large-Scale Machine Learning Interatomic Potentials to Predict Long-Timescale Electrolyte Transport Properties
@@ -61,7 +61,7 @@ Window: last 14 days
 - Score: 11.0
 - Match: 标题匹配 machine learning interatomic potential; 近两周发布
 
-**中文摘要：** 准确预测液体电解质的输运性质对于下一代电池的设计至关重要，这需要力场既具有量子力学精度，又足够快，能够进行长时间尺度的模拟。最近的大规模预训练机器学习原子间势（MLIP）接近密度泛函理论的精度，但速度仍然太慢，无法达到使输运性质收敛所需的时标。 我们提供了一种知识蒸馏程序，无需任何额外的从头计算数据，即可将大规模“教师”MLIP的准确性转移到快速的、针对特定系统的“学生”中。我们的蒸馏模型运行速度提高了约40倍，能够重现“教师”预测的结构可观测量，并在几天内生成稳定的20 ns轨迹，而“教师”则需要数月时间。 在多组钠离子和锂离子电解质中，学生预测的自扩散系数、离子电导率和剪切黏度与实验结果相符，并优于经典力场的预测结果，从而确立了蒸馏作为一种实用方法，可用于进行高通量电解质筛选所需的高精度、长时标模拟。
+**中文摘要：** 准确预测液体电解质的输运性质对于下一代电池的设计至关重要，这需要力场既具有量子力学精度，又足够快，能够进行长时间尺度的模拟。最近的大规模预训练机器学习原子间势（MLIP）接近密度泛函理论的精度，但速度仍然太慢，无法达到使输运性质收敛所需的时标。 我们提供了一种知识蒸馏程序，将大规模“教师”MLIP的准确性转移到快速的、特定于系统的“学生”中，而无需任何额外的从头计算数据。我们的蒸馏模型运行速度提高了约40倍，能够重现“教师”预测的结构可观测量，并在几天内生成稳定的20 ns轨迹，而“教师”则需要数月时间。 在多种钠离子和锂离子电解质中，学生预测的自扩散系数、离子电导率和剪切黏度与实验结果相符，并优于经典力场的预测结果，从而确立了蒸馏法作为一种实用方法，可用于高通量电解质筛选所需的高精度、长时尺度模拟。
 **讨论重点：** 准确预测液体电解质的输运性质对于下一代电池的设计至关重要，这需要力场既具有量子力学精度，又足够快，能够进行长时间尺度的模拟。最近的大规模预训练机器学习原子间势（MLIP）接近密度泛函理论的精度，但速度仍然太慢，无法达到使输运性质收敛所需的时标。 结合关键词看，阅读时应重点关注机器学习原子间势相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
 
 ### 5. Learning Between the Lines: Interaction Interpolation in a Multi Element Machine Learning Interatomic Potential
@@ -74,8 +74,8 @@ Window: last 14 days
 - Score: 10.0
 - Match: 标题匹配 machine learning interatomic potential; 近两周发布
 
-**中文摘要：** 近年来，机器学习原子间势（MLIAP）的不断发展极大地推动了材料研究的进步。然而，为每个独特问题构建定制MLIAP的需要仍然是一个瓶颈，这引发了MLIAP可迁移性的问题。虽然基础MLIAP由于其训练集中所代表的化学空间覆盖范围广泛而可以实现可迁移性，但其规模和计算成本限制了其日常使用。 QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 该模型还可以通过网络内的炼金术外推法很好地迁移到新元素，只需提供新元素及其合金的一元数据即可。这些发现表明，在有针对性、以多样性为导向的数据集上训练的MLIAP以相对较低的计算成本提供可迁移性，为材料建模提供了一条通往通用、资源高效MLIAP的实用途径。
-**讨论重点：** 在这里，我们采用一种分步式主动学习（AL）方法，通过对先前见过的交互进行插值，来开发一个紧凑而多样化的数据集和模型，该模型具有良好的泛化能力。然而，为每个独特问题构建定制的MLIAP的需要仍然是一个瓶颈，这引发了MLIAP可迁移性的问题。 结合关键词看，阅读时应重点关注机器学习原子间势相关的新方法的假设、训练或计算流程、适用体系，以及与已有方法相比的优势和局限。
+**中文摘要：** 近年来，机器学习原子间势能（MLIAP）的持续发展大大加速了材料研究。然而，为每个独特问题构建定制MLIAP的需要仍然是一个瓶颈，这引发了MLIAP可迁移性的问题。虽然基础MLIAP由于其训练集中所代表的化学空间覆盖范围广泛而可以实现可迁移性，但其规模和计算成本限制了其日常使用。 QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 该模型还可以通过网络内的炼金术外推很好地迁移到新元素，仅需要新元素及其合金的一元数据。这些发现表明，在有针对性、以多样性为导向的数据集上训练的MLIAP以相对较低的计算成本提供可迁移性，为材料建模提供了一条通往通用、资源高效MLIAP的实用途径。
+**讨论重点：** 在这里，我们采用一种分步式主动学习（AL）方法，通过对先前见过的交互进行插值，来开发一个紧凑而多样化的数据集和模型，该模型具有良好的泛化能力。然而，为每个独特的问题构建定制的MLIAP的需要仍然是一个瓶颈，这引发了MLIAP可迁移性的问题。 结合关键词看，阅读时应重点关注机器学习原子间势相关的新方法的假设、训练或计算流程、适用体系，以及与已有方法相比的优势和局限。
 
 ### 6. PLUMED-JAX: GPU-native enhanced sampling for atomistic simulations
 
@@ -87,7 +87,7 @@ Window: last 14 days
 - Score: 8.0
 - Match: 摘要匹配 machine learning interatomic potential; 近两周发布
 
-**中文摘要：** 我们推出了PLUMED-JAX，这是针对基于JAX的原子模拟的选定PLUMED集体变量、伞形采样和超动力学的AI辅助适配，使用gpt-6.1-sol开发，在Codex harness中将推理强度设置为高。与JAX-MD的集成支持编译分子动力学、批量副本、共享偏置的游走体以及跨多个图形处理单元的执行。 我们对照PLUMED和精确的自由能基准对该框架进行了验证，并展示了其在丁烷、硅结晶和锂迁移方面的应用，经典力场和机器学习原子间势的计算通量均有数倍的提升。
+**中文摘要：** 我们推出了PLUMED-JAX，这是针对基于JAX的原子模拟的选定PLUMED集体变量、伞形采样和超动力学的AI辅助改编，使用gpt-6.1-sol开发，在Codex harness中将推理强度设置为高。与JAX-MD的集成支持编译分子动力学、批量副本、共享偏差的游走体以及跨多个图形处理单元的执行。 我们对照PLUMED和精确的自由能基准对该框架进行了验证，并展示了其在丁烷、硅结晶和锂迁移方面的应用，经典力场和机器学习原子间势的计算通量均有数倍的提升。
 **讨论重点：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 结合关键词看，阅读时应重点关注机器学习原子间势相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
 
 ### 7. Retention-constrained fine-tuning of a pre-trained aluminium MACE potential for non-equilibrium defect dynamics and plasticity
@@ -100,7 +100,7 @@ Window: last 14 days
 - Score: 8.0
 - Match: 标题匹配 MACE potential; 近两周发布
 
-**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 这些组件共同建立了一种受保留约束的微调方案，用于改善塑性变形可观测量，同时保持被测的宏观力学响应。
+**中文摘要：** QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 这些组件共同建立了一种受保持力约束的微调方案，用于改善塑性变形可观测量，同时保持被测块体的力学响应。
 **讨论重点：** 要将预先训练的机器学习原子间势能应用于非平衡缺陷动力学和塑性，就需要提高缺陷精度，同时不降低近平衡弹性响应和振动响应。在这里，我们通过整合条件性读出不确定性、迭代式全参数更新和协议兼容性相对能量锚定，实现了铝MACE势QP17的这种平衡。 结合关键词看，阅读时应重点关注MACE 势函数相关的基准数据集、评价指标、误差来源，以及不同模型在精度、效率和可迁移性之间的取舍。
 
 ### 8. A thermodynamic correction layer for machine learning interatomic potentials
@@ -113,7 +113,7 @@ Window: last 14 days
 - Score: 8.0
 - Match: 标题匹配 machine learning interatomic potential; 近两周发布
 
-**中文摘要：** 机器学习原子间势能使原子模拟在大长度和时间尺度上具有接近\textit{从头算}的精度。基础模型将这种能力扩展到整个元素周期表，但继承了用于生成其训练数据的电子结构方法的热力学描述。因此，相对相稳定性的微小误差会导致相变温度的较大误差。 QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 它提供了一种模块化途径，可将可转移的原子模型与经过评估的相热力学相结合。
+**中文摘要：** 机器学习原子间势能使原子级模拟在大尺度和长时间范围内具有接近\textit{从头算}的精度。基础模型将这种能力扩展到整个元素周期表，但继承了用于生成其训练数据的电子结构方法的热力学描述。因此，相对相稳定性的微小误差会导致转变温度的较大误差。 QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS 它提供了一种模块化途径，可将可转移的原子模型与经过评估的相热力学相结合。
 **讨论重点：** 可重点阅读摘要中关于研究对象、方法设计和关键验证的描述。 结合关键词看，阅读时应重点关注机器学习原子间势相关的自由能路径、相稳定性、热力学量的不确定性，以及势函数误差如何传递到宏观性质。
 
 ### 9. Scalable long-range machine learning interatomic potentials with electrical response for atomistic material modeling
